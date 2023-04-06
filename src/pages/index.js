@@ -1,8 +1,9 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
+import Header from '../../components/Header/Header'
+import styled from 'styled-components'
+import JamBrp from '../../components/Selisih-jam/JamBrp'
+import JamS from '../../components/Selisih-jam/JamS'
 
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -13,7 +14,28 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-            
+       <Header/>  
+      <MainCont>
+          <div className='selisih-jam'>
+            <JamS/>
+            <JamBrp/>
+          </div>
+
+          <div>
+
+          </div>
+
+          <div>
+
+          </div>
+          <div>
+
+          </div>
+      </MainCont>
     </>
   )
 }
+
+const MainCont = styled.div`
+
+`
