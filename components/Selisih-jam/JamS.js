@@ -1,9 +1,13 @@
+import TfDat from "./tfDat"
 import styled from "styled-components"
 import { useState } from "react"
+import { useForm } from "react-hook-form"
 
 
 
-export default function JamS() {
+export default function JamS(props) {
+        // register
+        const {register, handleSubmit} = useForm()
         const [setJam, setJamVal] = useState('')
         const [setMenit, setMenitVal] = useState('')
         const [setDetik, setDetikVal] = useState('')
@@ -11,10 +15,18 @@ export default function JamS() {
         const [setJamS, setJamValS] = useState('')
         const [setMenitS, setMenitValS] = useState('')
         const [setDetikS, setDetikValS] = useState('')
+
+        //untuk hasil yang akan di kirimkan
+        const [hasil, setHasil] = useState({})
+        // untuk functionnya
+        function mintaDat() {
+
+        }
     // HANDLE NYA
     function handleJ(e) {
         let dat = e.target.value
             setJamVal(dat)
+            setHasil({ ...hasil, [e.target.name]: dat})
     }
     function handleM(e){
         setMenitVal(e.target.value)
@@ -35,7 +47,24 @@ export default function JamS() {
         setDetikValS(e.target.value)
     }
 
-
+    // function for submit
+    const onSUbmit = (event) => {
+        event.preventDefault()
+        // fetch('/api/jam', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type' : 'application/json',
+        //     },
+        //     body:JSON.stringify({jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS ,detikS:setDetikS })
+        // })
+        // .then((res) => res.json())
+        // .then((dat) => {
+        //     console.log(dat)
+        // }).catch((err) => {
+        //     console.error(err)
+        // })
+        props.onSubmit(hasil)
+    }
     // function untuk yang Mulai Dari
     function cekJam(i) {
         if(i > 23 || i.length > 2) {
@@ -91,16 +120,16 @@ export default function JamS() {
             return i
         }
     }
-
+    console.log(hasil)
   return (
     <Mycontain>
         <h1>selisih jam</h1>
-        <form action="" method="post" className="frm">
+        <form action="" method="post" className="frm" onSubmit={(e) => onSUbmit(e)}>
             <div className="Sls mulai">
                 <h2>Mulai dari :</h2>
                 <div className="inp">
                 <label htmlFor="Jam">Jam</label>
-                <input type="number" name="Jam" id="Jam" value={cekJam(setJam)} min="0" max="24" required onChange={handleJ}/>
+                <input type="number" name="Jam" id="Jam" value={cekJam(setJam)} min="0" max="24" required onChange={handleJ} />
                 </div>
                 <div className="inp">
                 <label htmlFor="Menit">Menit</label>
@@ -129,6 +158,7 @@ export default function JamS() {
             </div>
                 <button type="submit">klik</button>
         </form>
+        <TfDat jam={hasil} />
     </Mycontain>
   )
 }
