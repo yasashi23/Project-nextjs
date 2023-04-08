@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Header from '../../components/Header/Header'
 import styled from 'styled-components'
-import JamBrp from '../../components/Selisih-jam/JamBrp'
+import JamBrp from '../../components/jam-berapa/jamBrp'
 import JamS from '../../components/Selisih-jam/JamS'
+import TglS from '../../components/Selisih-tgl/tglS'
 
 
 export default function Home() {
@@ -17,16 +18,17 @@ export default function Home() {
        <Header/>  
       <MainCont>
           <div className='selisih-jam'>
-            <JamS/>
+            {/* <JamS/> */}
           </div>
-
-          <div>
-
+      <br/><hr/><br/>
+          <div className='jam-berapa'>
+            {/* <JamBrp/> */}
           </div>
-
-          <div>
-
+<br/><hr/><br/>
+          <div className='selisih-tgl'>
+            <TglS/>
           </div>
+          {/* <br/><hr/><br/>  */}
           <div>
 
           </div>

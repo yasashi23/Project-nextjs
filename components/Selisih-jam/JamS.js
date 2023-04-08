@@ -1,8 +1,8 @@
-import TfDat from "./tfDat"
+
 import JamBrp from "./JamBrp"
 import styled from "styled-components"
 import { useState } from "react"
-import { useForm } from "react-hook-form"
+
 
 
 
@@ -21,8 +21,17 @@ import { useForm } from "react-hook-form"
         // untuk functionnya
         function mintaDat(e) {
             setHasil({jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS, })
-        console.log(e)
 
+        }
+        function cleanDat(){
+            setJamVal('')
+            setMenitVal('')
+            setDetikVal('')
+            setJamValS('')
+            setMenitValS('')
+            setDetikValS('')
+
+            setHasil({jam:0, menit:0, detik:0, jamS:0, menitS:0,detikS:0})
         }
     // HANDLE NYA
     function handleJ(e) {
@@ -47,33 +56,6 @@ import { useForm } from "react-hook-form"
     }
     function handleDs(e){
         setDetikValS(e.target.value)
-    }
-
-    // function for submit
-    const handleSubmit = (event) => {
-        
-        // fetch('/api/jam', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type' : 'application/json',
-        //     },
-        //     body:JSON.stringify({jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS ,detikS:setDetikS })
-        // })
-        // .then((res) => res.json())
-        // .then((dat) => {
-        //     console.log(dat)
-        // }).catch((err) => {
-        //     console.error(err)
-        // })
-        // console.log(event)
-        // const dt = new FormData(event)
-        // const frmD = Object.fromEntries(dt)
-        // console.log(frmD)
-        // setHasil(frmD)
-        mintaDat()
-
-        console.log("berhails")
-        
     }
     // function untuk yang Mulai Dari
     function cekJam(i) {
@@ -167,7 +149,9 @@ import { useForm } from "react-hook-form"
                 </div>
             </div>
                 <button onClick={mintaDat}>klik</button>
-        {/* </form> */}
+                <button onClick={cleanDat}>Bersihkan</button>
+
+        
         {console.log(hasil)}
         <JamBrp data={hasil} />
     </Mycontain>
