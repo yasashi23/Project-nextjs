@@ -18,7 +18,7 @@ export default function Home() {
        <Header/>  
       <MainCont>
           <div className='selisih-jam'>
-            {/* <JamS/> */}
+            <JamS/>
           </div>
       <br/><hr/><br/>
           <div className='jam-berapa'>

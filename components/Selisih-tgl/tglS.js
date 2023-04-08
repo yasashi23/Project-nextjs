@@ -28,10 +28,17 @@ export default function TglS() {
     }
     // function send and delete
     function mintaDat() {
-    setHasil({mulai,sampai})        
+    setHasil({mulai,sampai,jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS })        
     }
     function cleanDat() {
-        console.log('aman')
+            setJamVal('')
+            setMenitVal('')
+            setDetikVal('')
+            setJamValS('')
+            setMenitValS('')
+            setDetikValS('')
+
+            setHasil({jam:0, menit:0, detik:0, jamS:0, menitS:0,detikS:0, mulai:'',sampai:''})
     }
     // FUNCTION FOR HANDLE JAM
         // HANDLE untuk mmulai
