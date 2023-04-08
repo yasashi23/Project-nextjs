@@ -18,7 +18,6 @@ export default function Home() {
       <MainCont>
           <div className='selisih-jam'>
             <JamS/>
-            <JamBrp/>
           </div>
 
           <div>

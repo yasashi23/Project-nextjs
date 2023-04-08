@@ -1,13 +1,13 @@
 import TfDat from "./tfDat"
+import JamBrp from "./JamBrp"
 import styled from "styled-components"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 
 
 
-export default function JamS(props) {
+ export default function JamS(props) {
         // register
-        const {register, handleSubmit} = useForm()
         const [setJam, setJamVal] = useState('')
         const [setMenit, setMenitVal] = useState('')
         const [setDetik, setDetikVal] = useState('')
@@ -19,14 +19,16 @@ export default function JamS(props) {
         //untuk hasil yang akan di kirimkan
         const [hasil, setHasil] = useState({})
         // untuk functionnya
-        function mintaDat() {
+        function mintaDat(e) {
+            setHasil({jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS, })
+        console.log(e)
 
         }
     // HANDLE NYA
     function handleJ(e) {
         let dat = e.target.value
             setJamVal(dat)
-            setHasil({ ...hasil, [e.target.name]: dat})
+            // setHasil({ ...hasil, [e.target.name]: dat})
     }
     function handleM(e){
         setMenitVal(e.target.value)
@@ -48,8 +50,8 @@ export default function JamS(props) {
     }
 
     // function for submit
-    const onSUbmit = (event) => {
-        event.preventDefault()
+    const handleSubmit = (event) => {
+        
         // fetch('/api/jam', {
         //     method: 'POST',
         //     headers: {
@@ -63,7 +65,15 @@ export default function JamS(props) {
         // }).catch((err) => {
         //     console.error(err)
         // })
-        props.onSubmit(hasil)
+        // console.log(event)
+        // const dt = new FormData(event)
+        // const frmD = Object.fromEntries(dt)
+        // console.log(frmD)
+        // setHasil(frmD)
+        mintaDat()
+
+        console.log("berhails")
+        
     }
     // function untuk yang Mulai Dari
     function cekJam(i) {
@@ -120,11 +130,11 @@ export default function JamS(props) {
             return i
         }
     }
-    console.log(hasil)
+    // console.log(hasil)
   return (
     <Mycontain>
         <h1>selisih jam</h1>
-        <form action="" method="post" className="frm" onSubmit={(e) => onSUbmit(e)}>
+
             <div className="Sls mulai">
                 <h2>Mulai dari :</h2>
                 <div className="inp">
@@ -156,22 +166,15 @@ export default function JamS(props) {
                 <input type="number" name="DetikS" id="DetikS" value={cekDetikS(setDetikS)} min="0" max="59" required onChange={handleDs}/>
                 </div>
             </div>
-                <button type="submit">klik</button>
-        </form>
-        <TfDat jam={hasil} />
+                <button onClick={mintaDat}>klik</button>
+        {/* </form> */}
+        {console.log(hasil)}
+        <JamBrp data={hasil} />
     </Mycontain>
   )
 }
 
 const Mycontain = styled.div`
-.frm{
-display:flex;
-flex-direction:column;
-gap: 50px;
-button{
-    width: 60px;
-}
-}
 .Sls{
     h2{
         margin-right:30px;
@@ -191,3 +194,4 @@ button{
     }
 }
 `
+
