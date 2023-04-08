@@ -151,7 +151,7 @@ export default function TglS() {
                 </div>
                 <div className="inp-time">
                     {tm.map((e,i) => (
-                        <div className="input-tm">
+                        <div className="input-tm" key={i}>
                             <label htmlFor={e}>{e}</label>
                             <input type="number" name={e} id={e} value={cekJamM[i]} onChange={changeM[i]} min={minM[i]} max={maxM[i]}/>
                         </div>
