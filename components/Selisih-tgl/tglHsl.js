@@ -6,8 +6,8 @@ export default function TglHsl({data}) {
   return (
     <Mycontain>
         ini TglHsl<br/>
-        {mulai.length} <br/>
-        {mulai}
+        {typeof mulai} <br/>
+        {sampai}
     </Mycontain>
   )
 }

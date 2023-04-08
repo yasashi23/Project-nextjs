@@ -8,6 +8,14 @@ export default function TglS() {
     const [sampai,setSampai]= useState('')
     const [hasil, setHasil] = useState('')
 
+    const [setJam, setJamVal] = useState('')
+    const [setMenit, setMenitVal] = useState('')
+    const [setDetik, setDetikVal] = useState('')
+        // untuk sampainya
+    const [setJamS, setJamValS] = useState('')
+    const [setMenitS, setMenitValS] = useState('')
+    const [setDetikS, setDetikValS] = useState('')    
+
 
     // HANDLE
     function handleM(e){
@@ -30,7 +38,11 @@ export default function TglS() {
     const sls = ["Mulai Dari", "Sampai"]
     const val = [mulai,sampai]
     const setVal = [handleM,handleS]
-    
+    // loop name time
+    const tm = ["Jam","Menit","Detik"]
+    const tmS = ["JamS","MenitS","DetikS"]
+    const tmH = []
+    // 
 
   return (
     <Mycontain>
@@ -39,7 +51,12 @@ export default function TglS() {
             {sls.map((e,i) => (
                 <div className="inp">
                     <label htmlFor="" className="lbl">{e}</label>
-                    <input type="datetime-local" name="" id="" value={val[i]} onChange={setVal[i]}/>
+                    <input type="date" name="" id="" value={val[i]} onChange={setVal[i]}/>
+                    <div className="time">
+                        <div className="inp2">
+
+                        </div>
+                    </div>
                 </div>
             ))}
         </div>

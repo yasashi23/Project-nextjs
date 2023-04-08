@@ -33,11 +33,10 @@ import { useState } from "react"
 
             setHasil({jam:0, menit:0, detik:0, jamS:0, menitS:0,detikS:0})
         }
-    // HANDLE NYA
+    // HANDLE untuk mmulai
     function handleJ(e) {
         let dat = e.target.value
             setJamVal(dat)
-            // setHasil({ ...hasil, [e.target.name]: dat})
     }
     function handleM(e){
         setMenitVal(e.target.value)
