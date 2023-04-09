@@ -24,17 +24,21 @@ export default function TglHsl({data}) {
     const dateS = tahun(sampai)
 
     function hitung() {
-      const mulaiJ = Math.abs(((jam*3600) + (menit*60) + (detik*1)) - ((jamS*3600) + (menitS*60) + (detikS*1))*1000)
-      const exmpl = [new Date(mulai),new Date(sampai)]
+      const datJm =`T${jam}:${menit}:${detik}`
+      const datJs =  `T${jamS}:${menitS}:${detikS}`
+      const mulaiJ = `${mulai}T${jam}:${menit}:${detik}`
+      const sampaiS = `${sampai}T${jamS}:${menitS}:${detikS}`
+      console.log(mulaiJ)
+      const exmpl = [new Date(mulaiJ),new Date(sampaiS)]
       const [mulaiD, sampaiD] = exmpl
-      const sls = (mulaiD.getTime() - sampaiD.getTime())+ mulaiJ
+      const sls = mulaiD.getTime() - sampaiD.getTime()
 
       if(Number.isNaN(sls)){
         return ""
       }
       // 1000 * 3600 * 24
       else{
-          const perDetikD = Math.abs((sls-(sls%(1000)))/1000)
+          const pDetik = Math.abs((sls-(sls%(1000)))/1000)
           const hariD = Math.abs((sls-(sls%(1000 * 3600 * 24)))/(1000*3600*24))
           let tahunD = (hariD-(hariD%365))/365
           console.log(`(41) tahunD ---> ${tahunD}`)
@@ -51,24 +55,57 @@ export default function TglHsl({data}) {
           if(sisaHriD >= 365) {
             tahunD++
             sisaHriD -= 365
-            console.log('di if baris 54')
           }
-          let bulanD = (sisaHriD-(sisaHriD%30))/30
-          let mingguD = ((sisaHriD%30)-((sisaHriD%30)%7))/7
-          let perHariD = (sisaHriD%30)%7
-          console.log(`(56) kabisatD ---> ${kabisatD} || sisaHriD ---> ${sisaHriD} || perHariD ---> ${perDetikD}`)
-          console.log(bulanD)
+          console.log(`${bnt(pDetik,'tahun')} tahun ${bnt(pDetik,'bulan')} bulan ${bnt(pDetik,'minggu')} minggu ${bnt(pDetik,'hari')} hari ${bnt(pDetik,'jam')} jam ${bnt(pDetik,'menit')} menit ${bnt(pDetik,'detik')} detik`)
           return tahunD
       }
     }
 
 
-    function bantuHtg(x,b){
-      const tahunD = (x-(x%(3600*24*365)))/(3600*24*365)
-      const sisaThn = (x%(3600*24*365))
-      const bulanD = (sisaThn-(sisaThn%(30*24*3600)))/(30*24*3600)
-      const sisaBln = (sisaThn%(30*24*3600))
-      const minggu = (sisaBln-(sisaBln%(7*24*3600)))
+    function bnt(x,b){
+      let tahunnya = (x-(x%(3600*24*365)))/(3600*24*365)
+      let sisaDtkDriThn = (x%(3600*24*365))
+      // console.log(sisaDtkDriThn)
+      let realHtg = (365*24*3600)
+      let kabisat = Math.floor(tahunnya/4)
+      if(tahunnya % 100 == 0 && tahunnya % 400 != 0) {
+            kabisat--;
+            console.log('kabisatnya --')
+          }
+      sisaDtkDriThn += kabisat
+      if(sisaDtkDriThn >= realHtg) {
+            tahunnya++
+            sisaDtkDriThn -= realHtg
+            console.log('yahunnya ++')
+          }
+
+      const bulannya = (sisaDtkDriThn-(sisaDtkDriThn%(30*24*3600)))/(30*24*3600)
+      const sisaBln = (sisaDtkDriThn%(30*24*3600))
+      const minggunya = (sisaBln-(sisaBln%(7*24*3600)))/(7*24*3600)
+      const sisaMinggu = (sisaBln%(7*24*3600))
+      const harinya = (sisaMinggu-(sisaMinggu%(24*3600)))/(24*3600)
+      const sisaHari = (sisaMinggu%(24*3600))
+      const jamnya = (sisaHari-(sisaHari%(3600)))/3600
+      const sisaJam = (sisaHari%(3600))
+      const menitnya = (sisaJam-(sisaJam%60))/60
+      const detiknya = (sisaJam%60)
+      if(b === 'tahun'){
+        return tahunnya
+      }if(b === 'bulan'){
+        return bulannya
+      }if(b === 'minggu') {
+        return minggunya
+      }if(b === 'hari') {
+        return harinya
+      }if(b === 'jam') {
+        return jamnya
+      }if(b === 'menit'){
+        return menitnya
+      }
+      else{
+        return detiknya
+      }
+
     }
     
   return (
