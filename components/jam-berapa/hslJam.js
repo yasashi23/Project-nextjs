@@ -12,20 +12,11 @@ const{jam,menit,detik,jamS,menitS,detikS,option} = wkt
     }
     else{
     if(option === 'lalu'){
-        if(mulai > sampai){
-        const sls = mulai - sampai
+        const sls = Math.abs(mulai - sampai)
         const hJam = (sls - (sls%3600))/3600
         const hMenit = ((sls%3600)-((sls%3600)%60))/60
         const hDetik = (sls%3600)%60
         return `${hJam} : ${hMenit} : ${hDetik} `
-        }
-        else{
-            const sls2 = sampai - mulai
-            const hJam2 = (sls2-(sls2%3600))/3600
-            const hMenit2 = ((sls2%3600)-((sls2%3600)%60))/60
-            const hDetik2 = (sls2%3600)%60
-            return `${hJam2} : ${hMenit2} : ${hDetik2} `
-        }
     }
     else{
         const sls = mulai + sampai

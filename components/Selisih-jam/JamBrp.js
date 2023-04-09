@@ -13,20 +13,12 @@ export default function JamBrp({data}) {
       return " "
     }
     else{
-      if(mulai > sampai){
-      const sls = mulai - sampai
+      const sls = Math.abs(mulai - sampai)
       const hJam = (sls - (sls%3600))/3600
       const hMenit = ((sls%3600)-((sls%3600)%60))/60
       const hDetik = (sls%3600)%60
+      console.log(sls)
       return `${hJam} Jam ${hMenit} Menit ${hDetik} Detik`
-      }
-      else{
-        const sls2 = sampai - mulai
-        const hJam2 = (sls2-(sls2%3600))/3600
-        const hMenit2 = ((sls2%3600)-((sls2%3600)%60))/60
-        const hDetik2 = (sls2%3600)%60
-        return `${hJam2} Jam ${hMenit2} Menit ${hDetik2} Detik`
-      }
   }
   }
 
@@ -37,18 +29,11 @@ export default function JamBrp({data}) {
       return " "
     }
     else {
-      if(mulai > sampai){
-      const sls = mulai - sampai
+      const sls = Math.abs(mulai - sampai)
       const hMenit = (sls-(sls%60))/60
       const hDetik = (sls%60)
       return `${hMenit} Menit ${hDetik} Detik`
-      }
-      else{
-        const sls2 = sampai - mulai
-      const hMenit2 = (sls2-(sls2%60))/60
-      const hDetik2 = (sls2%60)
-      return `${hMenit2} Menit ${hDetik2} Detik`
-      }
+
     }
   }
 
@@ -60,14 +45,8 @@ export default function JamBrp({data}) {
       return " "
     }
     else {
-      if(mulai > sampai){
-      const sls = mulai - sampai
+      const sls = Math.abs(mulai - sampai)
       return `${sls} Detik`
-      }
-      else{
-        const sls2 = sampai - mulai
-      return `${sls2} Detik`
-      }
     }
   }
 

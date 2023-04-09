@@ -22,7 +22,7 @@ export default function Home() {
           </div>
       <br/><hr/><br/>
           <div className='jam-berapa'>
-            {/* <JamBrp/> */}
+            <JamBrp/>
           </div>
 <br/><hr/><br/>
           <div className='selisih-tgl'>
