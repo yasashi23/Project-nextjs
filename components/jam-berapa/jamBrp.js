@@ -148,7 +148,7 @@ import { useState } from 'react'
                 <input type="number" name="DetikS" id="DetikS" value={cekDetikS(setDetikS)} min="0" max="59" required onChange={handleDs}/>
                 <label htmlFor="DetikS">Detik</label>
                 </div>
-                <div>
+                <div className='pls-choose'>
                     <label htmlFor="">
                         <select name="" id="" value={opt} onChange={handleOpt}>
                             <option value="datang" >Akan datang</option>

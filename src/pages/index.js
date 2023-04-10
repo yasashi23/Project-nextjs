@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import JamBrp from '../../components/jam-berapa/jamBrp'
 import JamS from '../../components/Selisih-jam/JamS'
 import TglS from '../../components/Selisih-tgl/tglS'
+import TanggalBrp from '../../components/tgl-berapa/Tanggal-brp'
 
 
 export default function Home() {
@@ -28,10 +29,10 @@ export default function Home() {
           <div className='selisih-tgl'>
             <TglS/>
           </div>
-          {/* <br/><hr/><br/>  */}
-          <div>
-
-          </div>
+          <br/><hr/><br/> 
+    <div className="tanggal-brp">
+      <TanggalBrp/>
+    </div>
       </MainCont>
     </>
   )

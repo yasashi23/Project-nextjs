@@ -29,7 +29,25 @@ export default function TglS() {
     // function send and delete
     function mintaDat() {
 
-    setHasil({mulai,sampai,jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS })        
+        if(setJam.length === 1 && setJam < 10) {
+            setJamVal(`0${setJam}`)
+        }
+        if(setMenit.length === 1 && setMenit < 10) {
+            setMenitVal(`0${setMenit}`)
+        }
+        if(setDetik.length === 1 && setDetik < 10) {
+            setDetikVal(`0${setDetik}`)
+        }
+        if(setJamS.length === 1 && setJamS < 10) {
+            setJamValS(`0${setJamS}`)
+        }
+        if(setMenitS.length === 1 && setMenitS< 10) {
+            setMenitValS(`0${setMenitS}`)
+        }   
+        if(setDetikS.length === 1 && setDetikS < 10) {
+            setDetikValS(`0${setDetikS}`)
+        }                           
+   setHasil({mulai,sampai,jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS })        
     }
     function cleanDat() {
             setJamVal('')
@@ -137,7 +155,26 @@ export default function TglS() {
     const setMS = [setJamS,setMenitS,setDetikS]
     const minM = ["0","0","0"]
     const maxM = ["24","59","59"]
-    // 
+    
+    // set sekarang value
+    function cekValMulai(){
+        const date = new Date()
+        const [hour,minute,second,dateC] = [date.getHours(),date.getMinutes(),date.getSeconds(),date.toISOString().substr(0, 10)]
+
+        setJamVal(hour)
+        setMenitVal(minute)
+        setDetikVal(second)
+        setMulai(dateC)
+    }
+    function cekValSampai(){
+        const date = new Date()
+        const [hour,minute,second,dateC] = [date.getHours(),date.getMinutes(),date.getSeconds(),date.toISOString().substr(0, 10)]
+
+        setJamValS(hour)
+        setMenitValS(minute)
+        setDetikValS(second)
+        setSampai(dateC)
+    }
 
   return (
     <Mycontain>
@@ -148,7 +185,7 @@ export default function TglS() {
             <div className="inputan">
                 <div className="inp date">
                     <label htmlFor={sls[0]}></label>
-                    <input type="date" name={sls[0]} id={sls[0]} value={val[0]} onChange={setVal[0]}/>
+                    <input type="date" name={sls[0]} id={sls[0]} value={val[0]} onChange={(e) => setMulai(e.target.value)}/>
                 </div>
                 <div className="inp-time">
                     {tm.map((e,i) => (
@@ -158,7 +195,10 @@ export default function TglS() {
                         </div>
                     ))}
                 </div>
+            </div>
+            <div className="btn-skg">
 
+            <button onClick={cekValMulai}>Sekarang</button>
             </div>
         </div>
         <div className="cont-inp">
@@ -166,7 +206,7 @@ export default function TglS() {
             <div className="inputan">
                 <div className="inp date">
                     <label htmlFor={sls[1]}></label>
-                    <input type="date" name={sls[1]} id={sls[1]} value={val[1]} onChange={setVal[1]}/>
+                    <input type="date" name={sls[1]} id={sls[1]} value={val[1]} onChange={(e) => setSampai(e.target.value)}/>
                 </div>            
                 <div className="inp-time">
                     {tmS.map((e,i) => (
@@ -176,6 +216,9 @@ export default function TglS() {
                         </div>
                     ))}
                 </div>            
+            </div>
+            <div className="btn-skg">
+                <button onClick={cekValSampai}>Sekarang</button>
             </div>
         </div>
         <div className="btn">
