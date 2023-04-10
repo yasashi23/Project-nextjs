@@ -17,18 +17,59 @@ export default function TglHsl({data}) {
         const rep = x.replace("-"," ")
         const rep2 = rep.replace("-"," ")
         const last = rep2.split(" ")
-        return last
+        const ini = last[0]
+        const intI = parseInt(ini)
+        return intI
       }
     }
     const dateM = tahun(mulai)
+    console.log(typeof dateM)
     const dateS = tahun(sampai)
 
+    function addZ(x){
+      if(x < 10 ){
+        const ne = `0${x}`
+        return ne
+      }else{
+        return x
+      }
+    }
+
+
+    function kbst(y1,y2){
+      let slsh = Math.abs(y2-y1)
+      let smallY = Math.min(y1,y2)
+      let yKbst = 0
+      console.log(smallY)
+      for(let i = 0; i <= slsh; i++){
+        console.log('ini loopping')
+            if (tentukanKabisat(smallY + i)) {
+      yKbst++;
+    }
+
+      return yKbst;
+      }
+
+
+
+    }
+
+      function tentukanKabisat(y){
+          if (y % 4 !== 0) {
+            return false;
+          } else if (y % 100 !== 0) {
+            return true;
+          } else if (y % 400 !== 0) {
+            return false;
+          } else {
+            return true;
+          }
+      }
+          const tntKbst = kbst(dateM,dateS)
+          console.log(`ada ${tntKbst}`)
     function hitung() {
-      const datJm =`T${jam}:${menit}:${detik}`
-      const datJs =  `T${jamS}:${menitS}:${detikS}`
-      const mulaiJ = `${mulai}T${jam}:${menit}:${detik}`
-      const sampaiS = `${sampai}T${jamS}:${menitS}:${detikS}`
-      console.log(mulaiJ)
+      const mulaiJ = `${mulai}T${addZ(jam)}:${addZ(menit)}:${addZ(detik)}`
+      const sampaiS = `${sampai}T${addZ(jamS)}:${addZ(menitS)}:${addZ(detikS)}`
       const exmpl = [new Date(mulaiJ),new Date(sampaiS)]
       const [mulaiD, sampaiD] = exmpl
       const sls = mulaiD.getTime() - sampaiD.getTime()
@@ -38,6 +79,7 @@ export default function TglHsl({data}) {
       }
       // 1000 * 3600 * 24
       else{
+
           const pDetik = Math.abs((sls-(sls%(1000)))/1000)
           const hariD = Math.abs((sls-(sls%(1000 * 3600 * 24)))/(1000*3600*24))
           let tahunD = (hariD-(hariD%365))/365
@@ -55,6 +97,7 @@ export default function TglHsl({data}) {
           if(sisaHriD >= 365) {
             tahunD++
             sisaHriD -= 365
+            console.log('62 nih bos')
           }
           console.log(`${bnt(pDetik,'tahun')} tahun ${bnt(pDetik,'bulan')} bulan ${bnt(pDetik,'minggu')} minggu ${bnt(pDetik,'hari')} hari ${bnt(pDetik,'jam')} jam ${bnt(pDetik,'menit')} menit ${bnt(pDetik,'detik')} detik`)
           return tahunD
@@ -63,22 +106,27 @@ export default function TglHsl({data}) {
 
 
     function bnt(x,b){
-      let tahunnya = (x-(x%(3600*24*365)))/(3600*24*365)
-      let sisaDtkDriThn = (x%(3600*24*365))
-      // console.log(sisaDtkDriThn)
+
+      let tahunnya = ((x-(x%(3600*24*365)))/(3600*24*365))
+      let sDt = (x%(3600*24*365))
+      let sisaDtkDriThn = sDt
       let realHtg = (365*24*3600)
-      let kabisat = Math.floor(tahunnya/4)
-      if(tahunnya % 100 == 0 && tahunnya % 400 != 0) {
+      // console.log('realHtg 1', realHtg)
+      let kabisat = Math.floor((sDt/(3600*24*365*4)))
+      // console.log('kabisatnya',kabisat)
+      // console.log('sisaDtkDriThn',sisaDtkDriThn)
+      if(tahunnya % 400 == 0 && tahunnya % 100 != 0) {
             kabisat--;
             console.log('kabisatnya --')
           }
-      sisaDtkDriThn += kabisat
+      sisaDtkDriThn -= kabisat
       if(sisaDtkDriThn >= realHtg) {
             tahunnya++
             sisaDtkDriThn -= realHtg
             console.log('yahunnya ++')
           }
-
+          // console.log('sisaDtkDriThn2',sisaDtkDriThn)
+          // console.log('realHtg',realHtg)
       const bulannya = (sisaDtkDriThn-(sisaDtkDriThn%(30*24*3600)))/(30*24*3600)
       const sisaBln = (sisaDtkDriThn%(30*24*3600))
       const minggunya = (sisaBln-(sisaBln%(7*24*3600)))/(7*24*3600)
@@ -89,6 +137,9 @@ export default function TglHsl({data}) {
       const sisaJam = (sisaHari%(3600))
       const menitnya = (sisaJam-(sisaJam%60))/60
       const detiknya = (sisaJam%60)
+
+        
+
       if(b === 'tahun'){
         return tahunnya
       }if(b === 'bulan'){
