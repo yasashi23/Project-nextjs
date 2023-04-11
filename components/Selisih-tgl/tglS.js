@@ -28,7 +28,6 @@ export default function TglS() {
     }
     // function send and delete
     function mintaDat() {
-
         if(setJam.length === 1 && setJam < 10) {
             setJamVal(`0${setJam}`)
         }
@@ -161,20 +160,52 @@ export default function TglS() {
         const date = new Date()
         const [hour,minute,second,dateC] = [date.getHours(),date.getMinutes(),date.getSeconds(),date.toISOString().substr(0, 10)]
 
-        setJamVal(hour)
-        setMenitVal(minute)
-        setDetikVal(second)
+        if(hour < 10){
+            const newHour = `0${hour}`
+            setJamVal(newHour)
+        }else{
+            setJamVal(hour)
+        }
+        if(minute < 10){
+        const newMinute = `0${minute}`
+        setMenitVal(newMinute)
+        }else{
+            setMenitVal(minute)
+        }
+        if(second < 10){
+            const newSecond = `0${second}`
+            setDetikVal(newSecond)
+        }else{
+            setDetikVal(second)
+        }    
         setMulai(dateC)
+
     }
     function cekValSampai(){
         const date = new Date()
-        const [hour,minute,second,dateC] = [date.getHours(),date.getMinutes(),date.getSeconds(),date.toISOString().substr(0, 10)]
+        let [hour,minute,second,dateC] = [date.getHours(),date.getMinutes(),date.getSeconds(),date.toISOString().substr(0, 10)]
 
-        setJamValS(hour)
-        setMenitValS(minute)
-        setDetikValS(second)
+         if(hour < 10){
+            const newHour = `0${hour}`
+            setJamValS(newHour)
+        }else{
+            setJamValS(hour)
+        }
+        if(minute < 10){
+        const newMinute = `0${minute}`
+        setMenitValS(newMinute)
+        }else{
+            setMenitValS(minute)
+        }
+        if(second < 10){
+            const newSecond = `0${second}`
+            setDetikValS(newSecond)
+        }else{
+            setDetikValS(second)
+        }        
         setSampai(dateC)
     }
+
 
   return (
     <Mycontain>
@@ -197,7 +228,6 @@ export default function TglS() {
                 </div>
             </div>
             <div className="btn-skg">
-
             <button onClick={cekValMulai}>Sekarang</button>
             </div>
         </div>

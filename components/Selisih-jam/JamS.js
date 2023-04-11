@@ -6,7 +6,7 @@ import { useState } from "react"
 
 
 
- export default function JamS(props) {
+ export default function JamS() {
         // register
         const [setJam, setJamVal] = useState('')
         const [setMenit, setMenitVal] = useState('')
@@ -111,7 +111,54 @@ import { useState } from "react"
             return i
         }
     }
-    // console.log(hasil)
+    
+
+        function cekValMulai(){
+        const date = new Date()
+        const [hour,minute,second,dateC] = [date.getHours(),date.getMinutes(),date.getSeconds()]
+
+        if(hour < 10){
+            const newHour = `0${hour}`
+            setJamVal(newHour)
+        }else{
+            setJamVal(hour)
+        }
+        if(minute < 10){
+        const newMinute = `0${minute}`
+        setMenitVal(newMinute)
+        }else{
+            setMenitVal(minute)
+        }
+        if(second < 10){
+            const newSecond = `0${second}`
+            setDetikVal(newSecond)
+        }else{
+            setDetikVal(second)
+        }    
+    }
+    function cekValSampai(){
+        const date = new Date()
+        let [hour,minute,second] = [date.getHours(),date.getMinutes(),date.getSeconds()]
+
+         if(hour < 10){
+            const newHour = `0${hour}`
+            setJamValS(newHour)
+        }else{
+            setJamValS(hour)
+        }
+        if(minute < 10){
+        const newMinute = `0${minute}`
+        setMenitValS(newMinute)
+        }else{
+            setMenitValS(minute)
+        }
+        if(second < 10){
+            const newSecond = `0${second}`
+            setDetikValS(newSecond)
+        }else{
+            setDetikValS(second)
+        }        
+    }
   return (
     <Mycontain>
         <h1>selisih jam</h1>
@@ -130,6 +177,9 @@ import { useState } from "react"
                 <label htmlFor="Detik">Detik</label>
                 <input type="number" name="Detik" id="Detik" value={cekDetik(setDetik)} min="0" max="59" required onChange={handleD}/>
                 </div>
+            <div className="btn-skg">
+            <button onClick={cekValMulai}>Sekarang</button>
+            </div>
             </div>
         {/*  SAMPAI  */}
             <div className="Sls sampai">
@@ -146,12 +196,12 @@ import { useState } from "react"
                 <label htmlFor="DetikS">Detik</label>
                 <input type="number" name="DetikS" id="DetikS" value={cekDetikS(setDetikS)} min="0" max="59" required onChange={handleDs}/>
                 </div>
+            <div className="btn-skg">
+                <button onClick={cekValSampai}>Sekarang</button>
+            </div>
             </div>
                 <button onClick={mintaDat}>klik</button>
                 <button onClick={cleanDat}>Bersihkan</button>
-
-        
-        {console.log(hasil)}
         <JamBrp data={hasil} />
     </Mycontain>
   )

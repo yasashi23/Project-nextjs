@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import HslJam from './hslJam'
 import { useState } from 'react'
 
- export default function JamBrp(props) {
+ export default function JamBrp() {
         // register
         const [setJam, setJamVal] = useState('')
         const [setMenit, setMenitVal] = useState('')
@@ -29,7 +29,7 @@ import { useState } from 'react'
             setMenitValS('')
             setDetikValS('')
 
-            setHasil({jam:0, menit:0, detik:0, jamS:0, menitS:0,detikS:0, option:opt})
+            setHasil({jam:"", menit:"", detik:"", jamS:"", menitS:"",detikS:"", option:opt})
         }
     // Handle untuk select
     function handleOpt(e) {
@@ -114,7 +114,29 @@ import { useState } from 'react'
             return i
         }
     }
-    // console.log(hasil)
+            function cekValMulai(){
+        const date = new Date()
+        const [hour,minute,second,dateC] = [date.getHours(),date.getMinutes(),date.getSeconds()]
+
+        if(hour < 10){
+            const newHour = `0${hour}`
+            setJamVal(newHour)
+        }else{
+            setJamVal(hour)
+        }
+        if(minute < 10){
+        const newMinute = `0${minute}`
+        setMenitVal(newMinute)
+        }else{
+            setMenitVal(minute)
+        }
+        if(second < 10){
+            const newSecond = `0${second}`
+            setDetikVal(newSecond)
+        }else{
+            setDetikVal(second)
+        }    
+    }
   return (
     <Mycontain>
         <h1>selisih jam</h1>
@@ -133,6 +155,9 @@ import { useState } from 'react'
                 <label htmlFor="Detik">Detik</label>
                 <input type="number" name="Detik" id="Detik" value={cekDetik(setDetik)} min="0" max="59" required onChange={handleD}/>
                 </div>
+            <div className="btn-skg">
+            <button onClick={cekValMulai}>Sekarang</button>
+            </div>
             </div>
         {/*  SAMPAI  */}
             <div className="Sls sampai">

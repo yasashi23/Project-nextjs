@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+
 import styled from "styled-components"
 
 
@@ -17,7 +17,6 @@ export default function JamBrp({data}) {
       const hJam = (sls - (sls%3600))/3600
       const hMenit = ((sls%3600)-((sls%3600)%60))/60
       const hDetik = (sls%3600)%60
-      console.log(sls)
       return `${hJam} Jam ${hMenit} Menit ${hDetik} Detik`
   }
   }

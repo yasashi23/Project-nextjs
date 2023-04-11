@@ -13,6 +13,10 @@ export default function TanggalBrp() {
     const [setJamS, setJamValS] = useState('')
     const [setMenitS, setMenitValS] = useState('')
     const [setDetikS, setDetikValS] = useState('')
+    // tahun tanggal bulan
+    const [setDay, setDayVal] = useState('')
+    const [setMonth, setMonthVal] = useState('')
+    const [setYear, setYearVal] = useState('')
     // opt
     const [opt, setOpt] = useState('datang')
 
@@ -35,34 +39,82 @@ export default function TanggalBrp() {
     }  
     if(l == 'DetikS'){
         setDetikValS(j)
-    }               
+    }
+    if(l == 'Hari'){
+        setDayVal(j)
+    }   
+    if( l == 'Bulan'){
+        setMonthVal(j)
+    }
+    if(l =='Tahun'){
+        setYearVal(j)
+    }
     }
 
     function cekJam(i,l) {
         if(l === 'Jam' || l === 'JamS'){
             if(i > 23 || i.length > 2) {
+                if(l === 'JamS'){
+                    setJamValS("23"); 
+                    return "23"
+                }else{
                 setJamVal("23")
-                return "23"
+                return "23"}
             }else{
                 return i
             }
         }
         if(l === 'Menit' || l === 'MenitS') {
             if(i > 59 || i.length > 2) {
-            setMenitVal("59")
-            return "59"
+                if(l === 'MenitS'){
+                    setMenitValS("59"); 
+                    return "59"
+                }else{
+                setMenitVal("59")
+                return "59"}            
             }else{
                 return i
             }
         }if(l === 'Detik' || l === 'DetikS') {
             if(i > 59 || i.length > 2) {
-            setDetikVal("59")
-            return "59"
+                if(l === 'DetikS'){
+                    setDetikValS("59"); 
+                    return "59"
+                }else{
+                setDetikVal("59")
+                return "59"}
+
             }else{
                 return i
             }
         }
     }  
+        function cekDate(i,l) {
+        if(l === 'Hari' ){
+            if(i > 1000 || i.length > 5) {
+                setDayVal("1000")
+                return "1000"
+            }else{
+                return i
+            }
+        }
+        if(l === 'Bulan' ){
+            if(i > 1001 || i.length > 4) {
+                setMonthVal("1000")
+                return "1000"
+            }else{
+                return i
+            }
+        }
+        if(l === 'Tahun' ){
+            if(i > 1000 || i.length > 4) {
+                setYearVal("1000")
+                return "1000"
+            }else{
+                return i
+            }
+        }                    
+    } 
     function cekValMulai(){
         const date = new Date()
         const [hour,minute,second,dateC] = [date.getHours(),date.getMinutes(),date.getSeconds(),date.toISOString().substr(0, 10)]
@@ -75,8 +127,8 @@ export default function TanggalBrp() {
     
     // function btnDat
     function btnDat(k) {
-        if(k == 'minta'){
-                    if(setJam.length === 1 && setJam < 10) {
+
+        if(setJam.length === 1 && setJam < 10) {
             setJamVal(`0${setJam}`)
         }
         if(setMenit.length === 1 && setMenit < 10) {
@@ -88,14 +140,15 @@ export default function TanggalBrp() {
         if(setJamS.length === 1 && setJamS < 10) {
             setJamValS(`0${setJamS}`)
         }
-        if(setMenitS.length === 1 && setMenitS< 10) {
+        if(setMenitS.length === 1 && setMenitS < 10) {
             setMenitValS(`0${setMenitS}`)
         }   
         if(setDetikS.length === 1 && setDetikS < 10) {
             setDetikValS(`0${setDetikS}`)
         }                           
-        setHasil({mulai,jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS, option:opt })    
-        }else {
+        setHasil({mulai,jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS,date:setDay,month:setMonth, year:setYear ,opt })    
+    }
+    function clear() {
             setJamVal('')
             setMenitVal('')
             setDetikVal('')
@@ -103,9 +156,8 @@ export default function TanggalBrp() {
             setMenitValS('')
             setDetikValS('')
 
-            setHasil({jam:'', menit:'', detik:'', jamS:'', menitS:'',detikS:'', mulai:'',sampai:''})            
+            setHasil({jam:'', menit:'', detik:'', jamS:'', menitS:'',detikS:'', mulai:''})            
         }
-    }
 
     // loop
     const tm = ["Jam","Menit","Detik"]
@@ -114,7 +166,11 @@ export default function TanggalBrp() {
     const maxM = ["24","59","59"]
     const cekJamM = [setJam,setMenit,setDetik]
     const cekJamMS = [setJamS,setMenitS,setDetikS]
-
+    // 
+    const dayDate = ["Hari","Bulan","Tahun"]
+    const minDate = ["1000","1000","1000"]
+    const maxDate = ["24","59","59"]
+    const cekDaten = [setDay,setMonth,setYear]
   return (
     <MyCont>
     <div className="form">
@@ -140,12 +196,25 @@ export default function TanggalBrp() {
             </div>
         </div> 
         <div className="choose">
-                        {tS.map((el,i) => (
-            <div className="inp">       
-                <input type="number" name={el} id={el} min={minM[i]} max={maxM[i]} value={cekJam(cekJamMS[i],el)} onChange={(e) => handle(e.target.value,el)} required/>
-                <label htmlFor={el}>{tm[i]}</label>
-            </div>                    
-                ))}
+            <div className="inp-input">
+                <div className="inp-cont inp-clock">
+                            {tS.map((el,i) => (
+                <div className="inp">       
+                    <input type="number" name={el} id={el} min={minM[i]} max={maxM[i]} value={cekJam(cekJamMS[i],el)} onChange={(e) => handle(e.target.value,el)} required/>
+                    <label htmlFor={el}>{tm[i]}</label>
+                </div>                    
+                    ))}
+                </div>
+                <div className="inp-cont inp-date">
+                    {dayDate.map((el,i) => (
+                <div className="inp">       
+                    <input type="number" name={el} id={el} min={minDate[i]} max={maxDate[i]} value={cekDate(cekDaten[i],el)} onChange={(e) => handle(e.target.value,el)} required/>
+                    <label htmlFor={el}>{el}</label>
+                </div>                    
+                    ))}
+                </div>
+
+            </div>
                 <div className='pls-choose'>
                     <label htmlFor="">
                         <select name="" id="" value={opt} onChange={(k) => setOpt(k.target.value)}>
@@ -156,8 +225,8 @@ export default function TanggalBrp() {
                 </div>
         </div>
         <div className="btn">
-            <button onClick={btnDat('minta')}>Hitung</button>
-            <button onClick={btnDat('bersihkan')}>Bersihkan</button>
+            <button onClick={btnDat}>Hitung</button>
+            <button onClick={clear}>Bersihkan</button>
         </div>       
     </div>
         <JadinyaTgl data={hasil}/>
@@ -195,14 +264,23 @@ const MyCont = styled.div`
     }
     .choose{
         display:flex;
-            .inp{
+        align-items:center;
+            .inp-input{
         display:flex;
         flex-direction:column;
-        align-items:center;
-        justify-content: center;
+        .inp-cont{
+            display:flex;
+        .inp{
+            display:flex;
+            flex-direction:column;
+            flex-direction:column;
+            align-items:center;
+            justify-content: center;            
+        }
         input{
             width:60px;
             text-align:center;
+        }
         }
     }
     }
