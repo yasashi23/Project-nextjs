@@ -161,70 +161,128 @@ import { useState } from "react"
     }
   return (
     <Mycontain>
-        <h1>selisih jam</h1>
+        <div className="hitung">
 
-            <div className="Sls mulai">
-                <h2>Mulai dari :</h2>
-                <div className="inp">
-                <label htmlFor="Jam">Jam</label>
-                <input type="number" name="Jam" id="Jam" value={cekJam(setJam)} min="0" max="24" required onChange={handleJ} />
+        
+            <h1>selisih jam</h1>
+                <div className="Sls mulai">
+                    <h2>Mulai dari </h2>
+                    <div className="inp">
+                    <label htmlFor="Jam">Jam</label>
+                    <input type="number" name="Jam" id="Jam" value={cekJam(setJam)} min="0" max="24" required onChange={handleJ} />
+                    </div>
+                    <div className="inp">
+                    <label htmlFor="Menit">Menit</label>
+                    <input type="number" name="Menit" id="Menit" value={cekMenit(setMenit)} min="0" max="59" required onChange={handleM}/>
+                    </div>
+                    <div className="inp">
+                    <label htmlFor="Detik">Detik</label>
+                    <input type="number" name="Detik" id="Detik" value={cekDetik(setDetik)} min="0" max="59" required onChange={handleD}/>
+                    </div>
+                <div className="btn-skg">
+                <button onClick={cekValMulai}>Sekarang</button>
                 </div>
-                <div className="inp">
-                <label htmlFor="Menit">Menit</label>
-                <input type="number" name="Menit" id="Menit" value={cekMenit(setMenit)} min="0" max="59" required onChange={handleM}/>
                 </div>
-                <div className="inp">
-                <label htmlFor="Detik">Detik</label>
-                <input type="number" name="Detik" id="Detik" value={cekDetik(setDetik)} min="0" max="59" required onChange={handleD}/>
+            {/*  SAMPAI  */}
+                <div className="Sls sampai">
+                    <h2>Sampai </h2>
+                    <div className="inp">
+                    <label htmlFor="JamS">Jam</label>
+                    <input type="number" name="JamS" id="JamS" value={cekJamS(setJamS)} min="0" max="24" required onChange={handleJs}/>
+                    </div>
+                    <div className="inp">
+                    <label htmlFor="MenitS">Menit</label>
+                    <input type="number" name="MenitS" id="MenitS" value={cekMenitS(setMenitS)} min="0" max="59" required onChange={handleMs}/>
+                    </div>
+                    <div className="inp">
+                    <label htmlFor="DetikS">Detik</label>
+                    <input type="number" name="DetikS" id="DetikS" value={cekDetikS(setDetikS)} min="0" max="59" required onChange={handleDs}/>
+                    </div>
+                <div className="btn-skg">
+                    <button onClick={cekValSampai}>Sekarang</button>
                 </div>
-            <div className="btn-skg">
-            <button onClick={cekValMulai}>Sekarang</button>
-            </div>
-            </div>
-        {/*  SAMPAI  */}
-            <div className="Sls sampai">
-                <h2>Sampai :</h2>
-                <div className="inp">
-                <label htmlFor="JamS">Jam</label>
-                <input type="number" name="JamS" id="JamS" value={cekJamS(setJamS)} min="0" max="24" required onChange={handleJs}/>
                 </div>
-                <div className="inp">
-                <label htmlFor="MenitS">Menit</label>
-                <input type="number" name="MenitS" id="MenitS" value={cekMenitS(setMenitS)} min="0" max="59" required onChange={handleMs}/>
+                <div className="btn">
+                    <button onClick={mintaDat}>klik</button>
+                    <button onClick={cleanDat}>Bersihkan</button>
                 </div>
-                <div className="inp">
-                <label htmlFor="DetikS">Detik</label>
-                <input type="number" name="DetikS" id="DetikS" value={cekDetikS(setDetikS)} min="0" max="59" required onChange={handleDs}/>
-                </div>
-            <div className="btn-skg">
-                <button onClick={cekValSampai}>Sekarang</button>
-            </div>
-            </div>
-                <button onClick={mintaDat}>klik</button>
-                <button onClick={cleanDat}>Bersihkan</button>
+        </div>
         <JamBrp data={hasil} />
     </Mycontain>
   )
 }
 
 const Mycontain = styled.div`
+display: flex;
+gap: 50px;
+max-width: 1300px;
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+.hitung{
+display:flex;
+flex-direction: column;
+border-radius: 20px;
+width: 500px;
+border: 20px;
+padding: 40px 10px 50px 10px;
+background: #FFFFFF;
+box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+.btn{
+    display: flex;
+    justify-content:center;
+    gap:20px;
+        button{
+        font-size: 14px;
+        padding: 8px 18px 8px 18px;
+        border-radius: 4px;
+        border: none;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        }
+        button:first-child(){
+            background: #6CFBA5;
+        }
+        button:last-child(){
+
+        }
+}
 .Sls{
     h2{
+        margin-top:18px;
         margin-right:30px;
+        width: 111px;
     }
     display:flex;
     align-items:center;
     gap:10px;
+    align-items: center;
+    gap: 10px;
+    width: 480px;
     .inp{
         display:flex;
         flex-direction:column;
         align-items:center;
         justify-content: center;
+        label{
+            margin-bottom:5px;
+            font-size:16px;
+        }
         input{
-            width:60px;
+            width:61px;
+            height:34px;
+            font-size:20px;
+            font-weight:500;
             text-align:center;
         }
     }
+    .btn-skg{
+        margin-top:18px;
+    }
 }
+}
+
 `
 
