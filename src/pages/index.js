@@ -39,5 +39,7 @@ export default function Home() {
 }
 
 const MainCont = styled.div`
-
+display:flex;
+flex-direction:column;
+align-items:center;
 `

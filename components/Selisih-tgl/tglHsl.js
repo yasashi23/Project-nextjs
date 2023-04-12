@@ -123,9 +123,8 @@ export default function TglHsl({data}) {
     
   return (
     <Mycontain>
-        ini TglHsl<br/>
+        <h1>Hasil Selisihnya</h1>
       <div className="hasil">
-      {hitung('tahun')}
         {loop.map((el,ind)=>(
           <div className="datanya" key={ind}>
             <h5>Kalau {el.charAt(0).toUpperCase() + el.slice(1)} Jadi</h5>
@@ -137,18 +136,34 @@ export default function TglHsl({data}) {
   )
 }
 
-const Mycontain = styled.div``
+const Mycontain = styled.div`
+h1{
+  text-align:center;
+}
+width: 500px;
+height: 450px;
+box-sizing: border-box;
+padding: 23px 10px 23px 10px;
+background: #FFFFFF;
+box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+border-radius: 20px;
+.hasil {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    .datanya {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      h5{
+        font-size: 16px;
+        font-weight: 100;
+      }
+      h4 {
+        font-size: 18px;
+        font-weight: 900;
+      }
+    }
+}
 
-          // const newD = Math.abs(Math.floor(sls / (1000 * 3600 * 24)))
-          // let tahunD = Math.floor(newD/365)
-          // let sisaHriD = newD % 365
-          // let kabisatD = Math.floor(tahunD/4)
-          // if(tahunD % 100 == 0 && tahun % 400 != 0) {
-          //   kabisatD--;
-          // }
-          // sisaHriD += kabisatD
-          // if(sisaHriD >= 365) {
-          //   tahunD++
-          //   sisaHriD -= 365
-          // }
-          // return tahunD
+`

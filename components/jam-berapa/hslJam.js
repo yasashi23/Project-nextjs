@@ -51,5 +51,19 @@ const{jam,menit,detik,jamS,menitS,detikS,option} = wkt
 }
 
 const Mycontain = styled.div`
+    display: flex;
+    width: 500px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 40px 10px 50px 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    flex-direction: column;
+    align-items: center;
+    h3 {
+      font-size: 42px;
+      margin-top: 50px;
+    }
 
+    
 `

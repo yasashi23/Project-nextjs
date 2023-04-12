@@ -164,7 +164,7 @@ import { useState } from "react"
         <div className="hitung">
 
         
-            <h1>selisih jam</h1>
+            <h1>Selisih jam</h1>
                 <div className="Sls mulai">
                     <h2>Mulai dari </h2>
                     <div className="inp">
@@ -203,7 +203,7 @@ import { useState } from "react"
                 </div>
                 </div>
                 <div className="btn">
-                    <button onClick={mintaDat}>klik</button>
+                    <button onClick={mintaDat}>Hitung</button>
                     <button onClick={cleanDat}>Bersihkan</button>
                 </div>
         </div>
@@ -213,9 +213,10 @@ import { useState } from "react"
 }
 
 const Mycontain = styled.div`
-display: flex;
-gap: 50px;
-max-width: 1300px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1300px;
 h1{
     text-align:center;
     margin-bottom:30px;
@@ -225,8 +226,8 @@ display:flex;
 flex-direction: column;
 border-radius: 20px;
 width: 500px;
-border: 20px;
-padding: 40px 10px 50px 10px;
+box-sizing: border-box;
+padding: 40px 20px 50px 20px;
 background: #FFFFFF;
 box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
 .btn{
@@ -242,25 +243,22 @@ box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
         font-weight: 600;
         cursor: pointer;
         }
-        button:first-child(){
-            background: #6CFBA5;
+        button:first-child{
+            background:#11D9F2;
         }
-        button:last-child(){
-
+        button:last-child{
+            background: #4AE688;
         }
 }
 .Sls{
     h2{
         margin-top:18px;
-        margin-right:30px;
-        width: 111px;
+        width: 120px;
     }
     display:flex;
     align-items:center;
     gap:10px;
-    align-items: center;
-    gap: 10px;
-    width: 480px;
+    justify-content: center;
     .inp{
         display:flex;
         flex-direction:column;
@@ -280,7 +278,20 @@ box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
     }
     .btn-skg{
         margin-top:18px;
+        button{
+            font-size: 14px;
+            padding: 8px 18px 8px 18px;
+            border-radius: 4px;
+            border: none;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: #6b6b6b;
+        }
     }
+}
+.Sls.sampai {
+    margin:20px 0px;
 }
 }
 

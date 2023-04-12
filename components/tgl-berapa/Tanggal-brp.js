@@ -155,8 +155,11 @@ export default function TanggalBrp() {
             setJamValS('')
             setMenitValS('')
             setDetikValS('')
+            setDayVal('')
+            setMonthVal('')
+            setYearVal('')
 
-            setHasil({jam:'', menit:'', detik:'', jamS:'', menitS:'',detikS:'', mulai:''})            
+            setHasil({jam:'', menit:'', detik:'', jamS:'', menitS:'',detikS:'', mulai:'',date:'',month:'', year:''})            
         }
 
     // loop
@@ -174,6 +177,7 @@ export default function TanggalBrp() {
   return (
     <MyCont>
     <div className="form">
+        <h1>Tanggal Berapa?</h1>
         <div className="cont-inp">
             <h3>{"Mulai Dari"}</h3>
             <div className="inputan">
@@ -235,56 +239,145 @@ export default function TanggalBrp() {
 }
 
 const MyCont = styled.div`
+display: flex;
+max-width: 1300px;
+gap: 50px;
+justify-content: center;
 .form{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    gap:30px;
-    border:1px solid red;
-    width:300px;
-    button{
-        width:71px;
+    h1{
+        text-align:center;
+        margin-bottom:20px;
     }
+    width: 500px;
+    height: 450px;
+    gap: 0px;
+    box-sizing: border-box;
+    padding: 40px 20px 50px 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-flex-direction: column;
     .cont-inp{
         display:flex;
-        justify-content:space-between;
+        justify-content:center;
+        gap:20px;
+        h3{
+        font-size: 24px;
+        margin-top: 18px;
+        width: 115px;
+        }
+        label {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }        
         .inputan {
             display:flex;
             flex-direction:column;
             align-items:center;
+            .inp.date{
+                input{
+                    width: 180px;
+                    height: 32px;
+                    font-size: 21px;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
             .inp-time{
                 display:flex;
+                gap:10px;
                 .input-tm{
                     display:flex;
                     flex-direction:column;
                     align-items:center;
+                    input{
+                        width: 56px;
+                        height: 32px;
+                        font-size: 19px;
+                        font-weight: 500;
+                        text-align: center;
+                    }
+                    }
+
                 }
             }
+                    .btn-skg{
+                        button{
+                        margin-top:36px;
+                        font-size: 14px;
+                        padding: 8px 18px 8px 18px;
+                        border-radius: 4px;
+                        border: none;
+                        color: white;
+                        font-weight: 600;
+                        cursor: pointer;
+                        background-color: #6b6b6b;
+                        }
+                    }            
         }
-    }
+    
     .choose{
         display:flex;
-        align-items:center;
+    align-items: center;
+    gap: 25px;
+    margin:30px 0px;
+    justify-content: center;
             .inp-input{
         display:flex;
         flex-direction:column;
         .inp-cont{
             display:flex;
-        .inp{
-            display:flex;
-            flex-direction:column;
-            flex-direction:column;
-            align-items:center;
-            justify-content: center;            
+            gap:10px;
+            label{
+                margin-top:5px;
+                margin-bottom:0px;
+            }
+            .inp{
+                display:flex;
+                flex-direction:column;
+                flex-direction:column;
+                align-items:center;
+                justify-content: center;            
+            }
+            input{
+                width: 56px;
+                height: 32px;
+                font-size: 18px;
+                font-weight: 500;
+                text-align: center;
+            }
         }
-        input{
-            width:60px;
-            text-align:center;
-        }
+        .inp-date{
+            margin:15px 0px 5px;
         }
     }
+    select {
+    height: 34px;
+    margin-bottom: 20px;
+}
+    }
+    .btn{
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+        button{
+            font-size: 14px;
+            padding: 8px 18px 8px 18px;
+            border-radius: 4px;
+            border: none;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button:first-child {
+            background: #11D9F2;
+        }
+        button:last-child {
+            background: #4AE688;
+        }
     }
 }
-
 `
 

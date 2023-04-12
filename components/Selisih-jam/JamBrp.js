@@ -72,5 +72,32 @@ export default function JamBrp({data}) {
   )
 }
 const Mycontain = styled.div`
-
+border-radius: 20px;
+padding: 40px 50px 50px 48px;
+background: #FFFFFF;
+box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+width: 500px;
+box-sizing: border-box;
+  h1{
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .detail {
+    display: flex;
+    gap: 28px;
+    flex-direction: column;
+      .per {
+      display: flex;
+      align-items: baseline;
+        p {
+        width: 140px;
+        font-size: 17px;
+        font-weight: 100;
+        }
+        h4 {
+          font-size: 20px;
+          font-weight: 900;
+        }
+      }
+}
 `

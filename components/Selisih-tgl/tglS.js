@@ -209,8 +209,8 @@ export default function TglS() {
 
   return (
     <Mycontain>
-        <h1>Selisih Tanggal</h1>
         <div className="form">
+        <h1>Selisih Tanggal</h1>
         <div className="cont-inp">
             <h3>{sls[0]}</h3>
             <div className="inputan">
@@ -231,7 +231,7 @@ export default function TglS() {
             <button onClick={cekValMulai}>Sekarang</button>
             </div>
         </div>
-        <div className="cont-inp">
+        <div className="cont-inp bawah">
             <h3>{sls[1]}</h3>
             <div className="inputan">
                 <div className="inp date">
@@ -252,7 +252,7 @@ export default function TglS() {
             </div>
         </div>
         <div className="btn">
-        <button onClick={mintaDat}>klik</button>
+        <button onClick={mintaDat}>Hitung</button>
         <button onClick={cleanDat}>Bersihkan</button>
 
         </div>
@@ -263,33 +263,101 @@ export default function TglS() {
 }
 
 const Mycontain = styled.div`
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+    max-width: 1300px;
+    justify-content: center;
+    display: flex;
+    gap: 50px;
 .form{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    gap:30px;
-    border:1px solid red;
-    width:300px;
-    button{
-        width:71px;
-    }
+    width: 500px;
+    height: 450px;
+    box-sizing: border-box;
+    padding: 40px 20px 50px 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    border-radius: 20px;
     .cont-inp{
         display:flex;
         justify-content:space-between;
+        button {
+        margin-top:36px;
+        font-size: 14px;
+        padding: 8px 18px 8px 18px;
+        border-radius: 4px;
+        border: none;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        background-color: #6b6b6b;
+            }
+        h3{
+        margin-top:36px;
+        font-size: 24px;
+        width: 114px;
+        }
+        
         .inputan {
             display:flex;
             flex-direction:column;
             align-items:center;
+            label{
+            margin-bottom: 5px;
+            font-size: 16px;
+            }
+            .inp.date{
+                input{
+                width: 180px;
+                height: 32px;
+                font-size: 21px;
+                align-items: center;
+                text-align: center;
+                }
+            }
             .inp-time{
-                display:flex;
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
                 .input-tm{
                     display:flex;
                     flex-direction:column;
                     align-items:center;
+                    input{
+                        width: 56px;
+                        height: 32px;
+                        font-size: 19px;
+                        font-weight: 500;
+                        text-align: center;
+                    }
                 }
             }
         }
     }
+    .cont-inp.bawah    {
+        margin: 20px 0px;
+    }
+.btn{
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    button{
+    font-size: 14px;
+    padding: 8px 18px 8px 18px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    }
+    button:first-child {
+    background: #11D9F2;
+}
+button:last-child {
+    background: #4AE688;
+}
+}    
 }
 
 `

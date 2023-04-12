@@ -35,7 +35,7 @@ export default function JadinyaTgl({data}) {
               const thisIs = `${hari[newDay]} ${newDate} ${bulan[newMonth]} ${newYear}`
               return thisIs
             }else{
-              const thisIs = `${addZ(newHour)}:${addZ(newMinute)}:${addZ(newSecond)}`
+              const thisIs = `Jam: ${addZ(newHour)}:${addZ(newMinute)}:${addZ(newSecond)}`
               return thisIs
             }
  
@@ -47,7 +47,7 @@ export default function JadinyaTgl({data}) {
               const thisIs = `${hari[newDay]}, ${newDate} ${bulan[newMonth]} ${newYear}.`
               return thisIs
             }else{
-              const thisIs = `${addZ(newHour)}:${addZ(newMinute)}:${addZ(newSecond)}`
+              const thisIs = `Jam: ${addZ(newHour)}:${addZ(newMinute)}:${addZ(newSecond)}`
               return thisIs
             }
                 
@@ -61,11 +61,38 @@ export default function JadinyaTgl({data}) {
 
   return (
     <Mycont>
+      <h1>Jadinya</h1>
       <h3>{hitung()}</h3>
-      <h5>{hitung('jam')}</h5>
+      <h5><span>{hitung('jam')}</span></h5>
     </Mycont>
     
   )
 }
 
-const Mycont = styled.div``
+const Mycont = styled.div`
+    width: 500px;
+    height: 450px;
+    gap: 0px;
+    box-sizing: border-box;
+    padding: 40px 10px 50px 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3{
+      font-size: 37px;
+      margin-top: 50px;
+    }
+    h5{
+      margin-top:15px;
+      font-size: 24px;
+      font-weight: 100;
+      span{
+        font-weight:600;
+        font-size:28px;
+      }
+    }
+
+`
