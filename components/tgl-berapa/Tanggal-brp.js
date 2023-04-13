@@ -253,27 +253,29 @@ gap: 50px;
 justify-content: center;
 .form{
     .line{
-    width:100%;
+    width:480px;
     height:0.5px;
     background-color:black;
     opacity:.2;
-    margin: 20px 0px;
+    margin:20px 0px;
+    ${'' /* margin: 20px 0px; */}
 }
     h1{
         text-align:center;
         margin-bottom:20px;
     }
     width: 500px;
-    height: 450px;
+ height: 450px;
     gap: 0px;
     box-sizing: border-box;
-    padding: 40px 20px 50px 20px;
     background: #FFFFFF;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
     border-radius: 20px;
     display: flex;
     justify-content: center;
     -webkit-flex-direction: column;
+    ${'' /* padding: 40px 20px 50px 20px; */}
+    align-items:center;
     .cont-inp{
         display:flex;
         justify-content:center;
@@ -302,6 +304,7 @@ justify-content: center;
             .inp-time{
                 display:flex;
                 gap:10px;
+                margin-top:5px;
                 .input-tm{
                     display:flex;
                     flex-direction:column;
@@ -336,7 +339,7 @@ justify-content: center;
         display:flex;
     align-items: center;
     gap: 25px;
-    margin:30px 0px;
+    margin:0px 0px 20px 0px;
     justify-content: center;
             .inp-input{
         display:flex;
