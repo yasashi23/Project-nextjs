@@ -203,6 +203,7 @@ export default function TanggalBrp() {
             <button onClick={cekValMulai}>Sekarang</button>
             </div>
         </div> 
+     <div className="line"></div>   
         <div className="choose">
             <div className="inp-input">
                 <div className="inp-cont inp-clock">
@@ -243,11 +244,21 @@ export default function TanggalBrp() {
 }
 
 const MyCont = styled.div`
+
+position:relative;
+top:50px;
 display: flex;
 max-width: 1300px;
 gap: 50px;
 justify-content: center;
 .form{
+    .line{
+    width:100%;
+    height:0.5px;
+    background-color:black;
+    opacity:.2;
+    margin: 20px 0px;
+}
     h1{
         text-align:center;
         margin-bottom:20px;

@@ -232,6 +232,7 @@ export default function TglS() {
             <button onClick={cekValMulai}>Sekarang</button>
             </div>
         </div>
+        <div className="line"></div>
         <div className="cont-inp bawah">
             <h2>{sls[1]}</h2>
             <div className="inputan">
@@ -264,7 +265,16 @@ export default function TglS() {
 }
 
 const Mycontain = styled.div`
+.line{
+    width:100%;
+    height:0.5px;
+    background-color:black;
+    opacity:.2;
+    margin: 20px 0px;
+}
 align-items:center;
+position:relative;
+top:50px;
 h1{
     text-align:center;
     margin-bottom:20px;
@@ -337,7 +347,7 @@ h1{
         }
     }
     .cont-inp.bawah    {
-        margin: 20px 0px;
+        margin: 0px 0px 20px 0px;
     }
 .btn{
     display: flex;

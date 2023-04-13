@@ -4,10 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 
 export default function Header({krmSls,krmJambrp,krmSlshTgl,krmTglBrp}) {
-  const [selisihJam, setSelisihJam] = useState('off')
-  const [jamBerapa, setjamBerapa] = useState('off')
-  const [selisihTgl, setSelisihTgl] = useState('off')
-  const [tglBrp, settglBrp] = useState('off')
+
   // ARR
   const objSak = {jam:krmSls,jamBrp:krmJambrp,tanggal:krmSlshTgl,tanggalBrp:krmTglBrp}
 
