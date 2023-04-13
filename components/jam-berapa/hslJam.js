@@ -102,6 +102,20 @@ const Mycontain = styled.div`
       font-size: 32px;
       font-weight:500;
     }
-
+@media only screen and (min-width:932px) and (max-width:1280px) {
+    width: 440px;
+    height: 200px;
+    .cont.tutup h1 {
+      margin-top:30%;
+      margin-bottom: 0;
+      font-size: 24px;
+    }
+    .cont.buka h1 {
+      margin-bottom: 22px;
+      font-size: 24px
+    }
     
+
+}
+
 `

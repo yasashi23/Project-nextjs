@@ -292,5 +292,52 @@ const Mycontain = styled.div`
         margin-top:5px;
         margin-bottom:0px;
     }
+
 }
+@media only screen and (min-width:932px) and (max-width:1280px) {
+max-width: 932px;
+gap: 20px;
+align-items:center;
+.jam-brp {
+    width: 440px;
+    padding: 40px 20px 50px 20px;
+    h1{
+    margin-bottom: 20px;
+    font-size: 24px;
+    }
+    select {
+    margin-bottom: 22px;
+    font-size: 12px        
+    }
+    .btn button {
+    font-size:14px;
+    }
+    }
+}
+.Sls{
+    h2{
+        width: 90px;
+        margin-top: 18px;
+    }
+    .inp {
+        label {
+         margin-bottom: 5px;
+         font-size: 13px   
+        }
+        input{
+            width: 50px;
+            height: 29px;
+            font-size: 15px
+        }
+    }
+    .btn-skg{
+        button {
+            font-size: 12px;
+            padding: 6px 12px 6px 12px; 
+        }
+    }
+}
+}
+
+
 `

@@ -295,5 +295,51 @@ box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
 }
 }
 
+@media only screen and (min-width:932px) and (max-width:1280px) {
+gap:20px;
+max-width:932px;
+h1{
+    margin-bottom: 20px;
+    font-size: 24px; 
+}
+.hitung{
+    width: 440px;
+    padding: 40px 20px 50px 20px;  
+
+    .Sls {
+        gap:10px;
+        h2{
+            width:90px;
+            margin-top:18px;
+        }
+        .inp {
+            label{
+                margin-bottom:5px;
+                font-size:14px;
+            }
+            input{
+                width: 50px;
+                height: 29px;
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+        .btn-skg button {
+                font-size: 12px;
+                padding: 6px 12px 6px 12px;
+        }
+    }  
+    .Sls.sampai {
+        margin: 20px 0px;
+    }
+    .btn button {
+        font-size: 12px;
+        padding: 8px 18px 8px 18px;
+    }
+
+}
+
+
+}
 `
 

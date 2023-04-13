@@ -120,4 +120,26 @@ h1.buka{
   transition:1s;
   height:100%;
 }
+
+@media only screen and (min-width:932px) and (max-width:1280px) {
+  padding: 40px 25px 50px 30px;
+  width: 440px;
+  h1{
+    font-size:24px;
+    margin-top:30%;
+  }
+  .detail .per {
+    p {
+    width: 135px;
+    font-size: 14px;
+    }
+  h4 {
+    font-size:16px;
+  }
+  }
+}
+
+
+
+
 `
