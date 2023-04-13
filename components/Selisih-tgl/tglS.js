@@ -46,7 +46,7 @@ export default function TglS() {
         if(setDetikS.length === 1 && setDetikS < 10) {
             setDetikValS(`0${setDetikS}`)
         }                           
-   setHasil({mulai,sampai,jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS })        
+   setHasil({mulai,sampai,jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS,buka:0 })        
     }
     function cleanDat() {
             setJamVal('')
@@ -55,8 +55,9 @@ export default function TglS() {
             setJamValS('')
             setMenitValS('')
             setDetikValS('')
-
-            setHasil({jam:'', menit:'', detik:'', jamS:'', menitS:'',detikS:'', mulai:'',sampai:''})
+            setMulai('')
+            setSampai('')
+            setHasil({jam:'0', menit:'0', detik:'0', jamS:'0', menitS:'0',detikS:'0', mulai:'0',sampai:'0',buka:1})
     }
     // FUNCTION FOR HANDLE JAM
         // HANDLE untuk mmulai
@@ -146,12 +147,12 @@ export default function TglS() {
     // loop name time
     const tm = ["Jam","Menit","Detik",]
     const tmS = ["JamS","MenitS","DetikS"]
+    const tmTgl = ["JamTgl","MenitTgl","DetikTgl"]
+    const tmTgls = ["JamsTgl","MenitsTgl","DetiksTgl"]
     const changeM = [handleJ,handleM,handleD]
     const changeS = [handleJs,handleMs,handleDs]
     const cekJamM = [cekJam(setJam),cekMenit(setMenit),cekDetik(setDetik)]
     const cekJamSa = [cekJamS(setJamS),cekMenitS(setMenitS),cekDetikS(setDetikS)]
-    const setM = [setJam,setMenit,setDetik]
-    const setMS = [setJamS,setMenitS,setDetikS]
     const minM = ["0","0","0"]
     const maxM = ["24","59","59"]
     
@@ -212,7 +213,7 @@ export default function TglS() {
         <div className="form">
         <h1>Selisih Tanggal</h1>
         <div className="cont-inp">
-            <h3>{sls[0]}</h3>
+            <h2>{sls[0]}</h2>
             <div className="inputan">
                 <div className="inp date">
                     <label htmlFor={sls[0]}></label>
@@ -221,8 +222,8 @@ export default function TglS() {
                 <div className="inp-time">
                     {tm.map((e,i) => (
                         <div className="input-tm" key={i}>
-                            <label htmlFor={e}>{e}</label>
-                            <input type="number" name={e} id={e} value={cekJamM[i]} onChange={changeM[i]} min={minM[i]} max={maxM[i]}/>
+                            <label htmlFor={tmTgl[i]}>{e}</label>
+                            <input type="number" name={tmTgl[i]} id={tmTgl[i]} value={cekJamM[i]} onChange={changeM[i]} min={minM[i]} max={maxM[i]}/>
                         </div>
                     ))}
                 </div>
@@ -232,7 +233,7 @@ export default function TglS() {
             </div>
         </div>
         <div className="cont-inp bawah">
-            <h3>{sls[1]}</h3>
+            <h2>{sls[1]}</h2>
             <div className="inputan">
                 <div className="inp date">
                     <label htmlFor={sls[1]}></label>
@@ -241,8 +242,8 @@ export default function TglS() {
                 <div className="inp-time">
                     {tmS.map((e,i) => (
                         <div className="input-tm">
-                            <label htmlFor={e}>{tm[i]}</label>
-                            <input type="number" name={e} id={e} value={cekJamSa[i]} onChange={changeS[i]} min={minM[i]} max={maxM[i]}/>
+                            <label htmlFor={tmTgls[i]}>{tm[i]}</label>
+                            <input type="number" name={tmTgls[i]} id={tmTgls[i]} value={cekJamSa[i]} onChange={changeS[i]} min={minM[i]} max={maxM[i]}/>
                         </div>
                     ))}
                 </div>            
@@ -263,6 +264,7 @@ export default function TglS() {
 }
 
 const Mycontain = styled.div`
+align-items:center;
 h1{
     text-align:center;
     margin-bottom:20px;
@@ -293,9 +295,8 @@ h1{
         cursor: pointer;
         background-color: #6b6b6b;
             }
-        h3{
+        h2{
         margin-top:36px;
-        font-size: 24px;
         width: 114px;
         }
         

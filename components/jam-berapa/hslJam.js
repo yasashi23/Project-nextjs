@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function HslJam({wkt}) {
-const{jam,menit,detik,jamS,menitS,detikS,option} = wkt
+let {jam,menit,detik,jamS,menitS,detikS,option,buka} = wkt
+
 
     function addZ(x){
       if(x < 10){
@@ -42,10 +43,14 @@ const{jam,menit,detik,jamS,menitS,detikS,option} = wkt
   }
 
 
+  
+
   return (
     <Mycontain>
-        <h2>Jadinya Jam</h2>
+      <div className={`cont ${buka == 0 ? "buka" : "tutup"}`}>
+        <h1 >Jadinya Jam</h1>
         <h3>{hitungjam()}</h3>
+      </div>
     </Mycontain>
   )
 }
@@ -60,9 +65,42 @@ const Mycontain = styled.div`
     box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
     flex-direction: column;
     align-items: center;
+    h1,h3{
+      text-align:center;
+    }
+    .cont.buka{
+      display:flex;
+      flex-direction: column;
+      h1{
+      transition:.7s;
+      margin-top:0%;
+      margin-bottom:50px;
+      }
+      h3{
+        height:100%;
+        opacity:10;
+        transition:1s;
+        delay:2s;
+        
+      }
+    }
+    .cont.tutup{
+      h1{
+      margin-top:50%;
+      transition:.7s;
+      margin-bottom:0;
+      }
     h3 {
-      font-size: 42px;
-      margin-top: 50px;
+      overflow:hidden;
+      height:0;
+      opacity:0;
+      transition:.3s;
+      delay:2s;
+    }
+    }
+    h3{
+      font-size: 32px;
+      font-weight:500;
     }
 
     

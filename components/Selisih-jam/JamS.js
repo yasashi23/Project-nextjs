@@ -20,7 +20,7 @@ import { useState } from "react"
         const [hasil, setHasil] = useState({})
         // untuk functionnya
         function mintaDat(e) {
-            setHasil({jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS, })
+            setHasil({jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS, sbuka:0})
 
         }
         function cleanDat(){
@@ -31,7 +31,7 @@ import { useState } from "react"
             setMenitValS('')
             setDetikValS('')
 
-            setHasil({jam:0, menit:0, detik:0, jamS:0, menitS:0,detikS:0})
+            setHasil({jam:0, menit:0, detik:0, jamS:0, menitS:0,detikS:0,sbuka:1})
         }
     // HANDLE untuk mmulai
     function handleJ(e) {

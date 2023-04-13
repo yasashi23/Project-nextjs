@@ -146,7 +146,7 @@ export default function TanggalBrp() {
         if(setDetikS.length === 1 && setDetikS < 10) {
             setDetikValS(`0${setDetikS}`)
         }                           
-        setHasil({mulai,jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS,date:setDay,month:setMonth, year:setYear ,opt })    
+        setHasil({mulai,jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS,date:setDay,month:setMonth, year:setYear,opt,buka:0 })    
     }
     function clear() {
             setJamVal('')
@@ -158,13 +158,17 @@ export default function TanggalBrp() {
             setDayVal('')
             setMonthVal('')
             setYearVal('')
+            setMulai('')
 
-            setHasil({jam:'', menit:'', detik:'', jamS:'', menitS:'',detikS:'', mulai:'',date:'',month:'', year:''})            
+            setHasil({jam:'', menit:'', detik:'', jamS:'', menitS:'',detikS:'', mulai:'',date:'',month:'', year:'',buka:1})            
         }
 
     // loop
     const tm = ["Jam","Menit","Detik"]
+    const tmTglbrp = ["JamTglbrp2","MenitTglbrp2","DetikTglbrp2"]
     const tS = ["JamS","MenitS","DetikS"]
+    const tmTgl = ["JamTglbrp","MenitTglbrp","DetikTglbrp"]
+    const tmTgls = ["HariTglbrp","BulanTglbrp","TahunTglbrp"]
     const minM = ["0","0","0"]
     const maxM = ["24","59","59"]
     const cekJamM = [setJam,setMenit,setDetik]
@@ -179,17 +183,17 @@ export default function TanggalBrp() {
     <div className="form">
         <h1>Tanggal Berapa?</h1>
         <div className="cont-inp">
-            <h3>{"Mulai Dari"}</h3>
+            <h2>{"Mulai Dari"}</h2>
             <div className="inputan">
                 <div className="inp date">
-                    <label htmlFor="Mulai"></label>
-                    <input type="date" name="Mulai" id="Mulai" value={mulai} onChange={(e) => setMulai(e.target.value)}/>
+                    <label htmlFor="MulaiTglbrp"></label>
+                    <input type="date" name="MulaiTglbrp" id="MulaiTglbrp" value={mulai} onChange={(e) => setMulai(e.target.value)}/>
                 </div>
                 <div className="inp-time">
                     {tm.map((e,i) => (
                         <div className="input-tm" key={i}>
-                            <label htmlFor={e}>{e}</label>
-                            <input type="number" name={e} id={e} value={cekJam(cekJamM[i],e)} onChange={(z) => handle(z.target.value,e)} min={minM[i]} max={maxM[i]}/>
+                            <label htmlFor={tmTgl[i]}>{e}</label>
+                            <input type="number" name={tmTgl[i]} id={tmTgl[i]} value={cekJam(cekJamM[i],e)} onChange={(z) => handle(z.target.value,e)} min={minM[i]} max={maxM[i]}/>
                         </div>
                     ))}
                 </div>
@@ -204,16 +208,16 @@ export default function TanggalBrp() {
                 <div className="inp-cont inp-clock">
                             {tS.map((el,i) => (
                 <div className="inp">       
-                    <input type="number" name={el} id={el} min={minM[i]} max={maxM[i]} value={cekJam(cekJamMS[i],el)} onChange={(e) => handle(e.target.value,el)} required/>
-                    <label htmlFor={el}>{tm[i]}</label>
+                    <input type="number" name={tmTglbrp[i]} id={tmTglbrp[i]} min={minM[i]} max={maxM[i]} value={cekJam(cekJamMS[i],el)} onChange={(e) => handle(e.target.value,el)} required/>
+                    <label htmlFor={tmTglbrp[i]}>{tm[i]}</label>
                 </div>                    
                     ))}
                 </div>
                 <div className="inp-cont inp-date">
                     {dayDate.map((el,i) => (
                 <div className="inp">       
-                    <input type="number" name={el} id={el} min={minDate[i]} max={maxDate[i]} value={cekDate(cekDaten[i],el)} onChange={(e) => handle(e.target.value,el)} required/>
-                    <label htmlFor={el}>{el}</label>
+                    <input type="number" name={tmTgls[i]} id={tmTgls[i]} min={minDate[i]} max={maxDate[i]} value={cekDate(cekDaten[i],el)} onChange={(e) => handle(e.target.value,el)} required/>
+                    <label htmlFor={tmTgls[i]}>{el}</label>
                 </div>                    
                     ))}
                 </div>
@@ -263,8 +267,7 @@ justify-content: center;
         display:flex;
         justify-content:center;
         gap:20px;
-        h3{
-        font-size: 24px;
+        h2{
         margin-top: 18px;
         width: 115px;
         }

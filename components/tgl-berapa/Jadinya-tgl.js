@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function JadinyaTgl({data}) {
-  const {mulai,jam,menit,detik,jamS,menitS,detikS,date,month,year, opt} = data
+  const {mulai,jam,menit,detik,jamS,menitS,detikS,date,month,year, opt,buka} = data
 
     function addZ(x){
       if(x < 10){
@@ -61,9 +61,11 @@ export default function JadinyaTgl({data}) {
 
   return (
     <Mycont>
-      <h1>Jadinya</h1>
+      <h1 className={buka == 0 ? "buka" : "tutup"}>Jadinya Hari</h1>
+      <div className={buka == 0 ? "cont buka" : "cont tutup"}>
       <h3>{hitung()}</h3>
       <h5><span>{hitung('jam')}</span></h5>
+      </div>
     </Mycont>
     
   )
@@ -81,18 +83,44 @@ const Mycont = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    h3{
-      font-size: 37px;
-      margin-top: 50px;
-    }
-    h5{
-      margin-top:15px;
-      font-size: 24px;
-      font-weight: 100;
-      span{
-        font-weight:600;
-        font-size:28px;
+    .cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      overflow:hidden;
+      h3{
+        font-size: 34px;
       }
+      h5{
+        margin-top:15px;
+        font-size: 24px;
+        font-weight: 100;
+        span{
+          font-weight:600;
+          font-size:28px;
+        }
+      }
+    }
+    h1.buka{
+      margin-bottom:50px;
+      margin-top:0%;
+      transition:1s;
+    }
+    h1.tutup{
+      margin-top:35%;
+      margin-bottom:0px;
+      transition:.8s;
+    }
+
+    .cont.tutup{
+      height:0%;
+      opacity:0;
+      transition:.4s;
+    }
+    .cont.buka{
+      height:100%;
+      opacity:10;
+      transition:1s;
     }
 
 `

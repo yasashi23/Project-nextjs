@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 export default function JamBrp({data}) {
 
-  const{jam,menit,detik,jamS,menitS,detikS} = data
+  const{jam,menit,detik,jamS,menitS,detikS,sbuka} = data
 
   function hitungjam() {
     const mulai = (jam*3600) + (menit*60) + (detik*1)
@@ -53,9 +53,9 @@ export default function JamBrp({data}) {
 
   return (
     <Mycontain>
-    
-      <h1 id="main">HASIL SELISIHNYA</h1>
-      <div className="detail">
+      
+      <h1 id="main" className={sbuka == 0 ? "buka" : ""}>Hasil Selisih Dari Jam</h1>
+      <div className={sbuka == 0 ? "detail buka" : "detail tutup"}>
         <div className="per">
         <p>Kalau Jam Jadi</p><h4>{hitungjam()}</h4>
         </div>
@@ -77,27 +77,47 @@ padding: 40px 50px 50px 48px;
 background: #FFFFFF;
 box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
 width: 500px;
+height:350px;
 box-sizing: border-box;
   h1{
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
+    margin-top:25%;
+    transition:1s;
   }
   .detail {
     display: flex;
     gap: 28px;
     flex-direction: column;
+
       .per {
       display: flex;
       align-items: baseline;
         p {
-        width: 140px;
+        width: 160px;
         font-size: 17px;
-        font-weight: 100;
+        font-weight: 500;
         }
         h4 {
           font-size: 20px;
-          font-weight: 900;
+          font-weight: 800;
         }
       }
+}
+h1.buka{
+  margin-top:0%;
+  margin-bottom:30px;
+  transition:1s;
+}
+.detail.tutup{
+    overflow:hidden;
+    height:0%;
+    overflow:0;
+    transition:0.5s;
+}
+.detail.buka{
+  overflow:hidden;
+  transition:1s;
+  height:100%;
 }
 `

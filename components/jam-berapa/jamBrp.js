@@ -14,12 +14,13 @@ import { useState } from 'react'
         const [setDetikS, setDetikValS] = useState('')
         // untuk value yang akan datang dan yang lalu
         const [opt, setOpt] = useState('datang')
+        // untuk animasinya
 
         //untuk hasil yang akan di kirimkan
         const [hasil, setHasil] = useState({})
         // untuk functionnya
         function mintaDat(e) {
-            setHasil({jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS, option:opt})
+            setHasil({jam:setJam, menit:setMenit, detik:setDetik, jamS:setJamS, menitS:setMenitS,detikS: setDetikS, option:opt,buka:0})
         }
         function cleanDat(){
             setJamVal('')
@@ -28,8 +29,7 @@ import { useState } from 'react'
             setJamValS('')
             setMenitValS('')
             setDetikValS('')
-
-            setHasil({jam:"", menit:"", detik:"", jamS:"", menitS:"",detikS:"", option:opt})
+            setHasil({jam:"", menit:"", detik:"", jamS:"", menitS:"",detikS:"", option:opt,buka:1})
         }
     // Handle untuk select
     function handleOpt(e) {
@@ -114,6 +114,7 @@ import { useState } from 'react'
             return i
         }
     }
+    
             function cekValMulai(){
         const date = new Date()
         const [hour,minute,second,dateC] = [date.getHours(),date.getMinutes(),date.getSeconds()]
@@ -144,16 +145,16 @@ import { useState } from 'react'
                 <div className="Sls mulai">
                     <h2>Mulai dari</h2>
                     <div className="inp">
-                    <label htmlFor="Jam">Jam</label>
-                    <input type="number" name="Jam" id="Jam" value={cekJam(setJam)} min="0" max="24" required onChange={handleJ} />
+                    <label htmlFor="JamBrp">Jam</label>
+                    <input type="number" name="JamBrp" id="JamBrp" value={cekJam(setJam)} min="0" max="24" required onChange={handleJ} />
                     </div>
                     <div className="inp">
-                    <label htmlFor="Menit">Menit</label>
-                    <input type="number" name="Menit" id="Menit" value={cekMenit(setMenit)} min="0" max="59" required onChange={handleM}/>
+                    <label htmlFor="MenitBrp">Menit</label>
+                    <input type="number" name="MenitBrp" id="MenitBrp" value={cekMenit(setMenit)} min="0" max="59" required onChange={handleM}/>
                     </div>
                     <div className="inp">
-                    <label htmlFor="Detik">Detik</label>
-                    <input type="number" name="Detik" id="Detik" value={cekDetik(setDetik)} min="0" max="59" required onChange={handleD}/>
+                    <label htmlFor="DetikBrp">Detik</label>
+                    <input type="number" name="DetikBrp" id="DetikBrp" value={cekDetik(setDetik)} min="0" max="59" required onChange={handleD}/>
                     </div>
                 <div className="btn-skg">
                 <button onClick={cekValMulai}>Sekarang</button>
@@ -162,16 +163,16 @@ import { useState } from 'react'
             {/*  SAMPAI  */}
                 <div className="Sls sampai">
                     <div className="inp">
-                    <input type="number" name="JamS" id="JamS" value={cekJamS(setJamS)} min="0" max="24" required onChange={handleJs}/>
-                    <label htmlFor="JamS">Jam</label>
+                    <input type="number" name="JamSbrp" id="JamSbrp" value={cekJamS(setJamS)} min="0" max="24" required onChange={handleJs}/>
+                    <label htmlFor="JamSbrp">Jam</label>
                     </div>
                     <div className="inp">
-                    <input type="number" name="MenitS" id="MenitS" value={cekMenitS(setMenitS)} min="0" max="59" required onChange={handleMs}/>
-                    <label htmlFor="MenitS">Menit</label>
+                    <input type="number" name="MenitSbrp" id="MenitSbrp" value={cekMenitS(setMenitS)} min="0" max="59" required onChange={handleMs}/>
+                    <label htmlFor="MenitSbrp">Menit</label>
                     </div>
                     <div className="inp">
-                    <input type="number" name="DetikS" id="DetikS" value={cekDetikS(setDetikS)} min="0" max="59" required onChange={handleDs}/>
-                    <label htmlFor="DetikS">Detik</label>
+                    <input type="number" name="DetikSbrp" id="DetikSbrp" value={cekDetikS(setDetikS)} min="0" max="59" required onChange={handleDs}/>
+                    <label htmlFor="DetikSbrp">Detik</label>
                     </div>
                     <div className='pls-choose'>
                         <label htmlFor="">
@@ -251,6 +252,7 @@ const Mycontain = styled.div`
     margin-right: 0px;
     gap: 10px;
     .btn-skg{
+        margin-top:24px;
         button{
             font-size: 14px;
             padding: 8px 18px 8px 18px;

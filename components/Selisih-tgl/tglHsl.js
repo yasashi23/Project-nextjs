@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 export default function TglHsl({data}) {
-    const {mulai,sampai,jam,menit,detik,jamS,menitS,detikS} = data
+    const {mulai,sampai,jam,menit,detik,jamS,menitS,detikS,buka} = data
 
 
     function tahun(x){
@@ -91,27 +91,27 @@ export default function TglHsl({data}) {
       const detiknya = (sisaJam%60)
 
      if(apa === 'tahun'){
-       return `${tahunnya.toLocaleString('en-US')} tahun ${bulannya.toLocaleString('en-US')} bulan ${minggunya.toLocaleString('en-US')} minggu ${harinya.toLocaleString('en-US')} hari ${jamnya.toLocaleString('en-US')} jam ${menitnya.toLocaleString('en-US')} menit ${detiknya.toLocaleString('en-US')} detik`
+       return `${tahunnya.toLocaleString('en-US')} tahun ${Math.abs(bulannya.toLocaleString('en-US'))} bulan ${Math.abs(minggunya.toLocaleString('en-US'))} minggu ${Math.abs(harinya.toLocaleString('en-US'))} hari ${Math.abs(jamnya.toLocaleString('en-US'))} jam ${Math.abs(menitnya.toLocaleString('en-US'))} menit ${Math.abs(detiknya.toLocaleString('en-US'))} detik`
      }
      if(apa === 'bulan'){
       const newVal = bulannya + ((tahunnya*12))
-      return `${newVal.toLocaleString('en-US')} bulan ${minggunya.toLocaleString('en-US')} minggu ${harinya.toLocaleString('en-US')} hari ${jamnya.toLocaleString('en-US')} jam ${menitnya.toLocaleString('en-US')} menit ${detiknya.toLocaleString('en-US')} detik`
+      return `${newVal.toLocaleString('en-US')} bulan ${Math.abs(minggunya.toLocaleString('en-US'))} minggu ${Math.abs(harinya.toLocaleString('en-US'))} hari ${Math.abs(jamnya.toLocaleString('en-US'))} jam ${Math.abs(menitnya.toLocaleString('en-US'))} menit ${Math.abs(detiknya.toLocaleString('en-US'))} detik`
      }
       if(apa === 'minggu'){
       const newVal = (bulannya*4) + ((tahunnya*12*4))
-      return `${newVal.toLocaleString('en-US')} minggu ${harinya.toLocaleString('en-US')} hari ${jamnya.toLocaleString('en-US')} jam ${menitnya.toLocaleString('en-US')} menit ${detiknya.toLocaleString('en-US')} detik`
+      return `${newVal.toLocaleString('en-US')} minggu ${Math.abs(harinya.toLocaleString('en-US'))} hari ${Math.abs(jamnya.toLocaleString('en-US'))} jam ${Math.abs(menitnya.toLocaleString('en-US'))} menit ${Math.abs(detiknya.toLocaleString('en-US'))} detik`
      }
       if(apa === 'hari'){
       const newVal =  harinya + (minggunya*7) + (bulannya*30) + ((tahunnya*365))
-      return `${newVal.toLocaleString('en-US')} hari ${jamnya.toLocaleString('en-US')} jam ${menitnya.toLocaleString('en-US')} menit ${detiknya.toLocaleString('en-US')} detik`
+      return `${newVal.toLocaleString('en-US')} hari ${Math.abs(jamnya.toLocaleString('en-US'))} jam ${Math.abs(menitnya.toLocaleString('en-US'))} menit ${Math.abs(detiknya.toLocaleString('en-US'))} detik`
      }
       if(apa === 'jam'){
       const newVal = jamnya + (harinya*24) + (minggunya*7*24) + (bulannya*30*24) + (tahunnya*365*24)
-      return `${newVal.toLocaleString('en-US')} jam ${menitnya.toLocaleString('en-US')} menit ${detiknya.toLocaleString('en-US')} detik`
+      return `${newVal.toLocaleString('en-US')} jam ${Math.abs(menitnya.toLocaleString('en-US'))} menit ${Math.abs(detiknya.toLocaleString('en-US'))} detik`
      }
       if(apa === 'menit'){
       const newVal = menitnya + (jamnya*60) + (harinya*24*60) + (minggunya*7*24*60) + (bulannya*30*24*60) + (tahunnya*365*24*60)
-      return `${newVal.toLocaleString('en-US')} menit ${detiknya.toLocaleString('en-US')} detik`
+      return `${newVal.toLocaleString('en-US')} menit ${Math.abs(detiknya.toLocaleString('en-US'))} detik`
      }
       if(apa === 'detik'){
       const newVal = detiknya + (menitnya*3600) + (jamnya*3600) + (harinya*24*3600) + (minggunya*7*24*3600) + (bulannya*30*24*3600) + (tahunnya*365*24*3600)
@@ -123,8 +123,8 @@ export default function TglHsl({data}) {
     
   return (
     <Mycontain>
-        <h1>Hasil Selisihnya</h1>
-      <div className="hasil">
+        <h1 className={buka == 0 ? "buka" : "tutup"}>Hasil Selisih Dari Tanggal</h1>
+      <div className={buka == 0 ? "hasil buka" : "hasil tutup"}>
         {loop.map((el,ind)=>(
           <div className="datanya" key={ind}>
             <h5>Kalau {el.charAt(0).toUpperCase() + el.slice(1)} Jadi</h5>
@@ -140,13 +140,15 @@ const Mycontain = styled.div`
 h1{
   text-align:center;
 }
-width: 500px;
-height: 450px;
+width: 670px;
+height: 510px;
 box-sizing: border-box;
 padding: 23px 10px 23px 10px;
 background: #FFFFFF;
 box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
 border-radius: 20px;
+position:relative;
+top:50px;
 .hasil {
     display: flex;
     flex-direction: column;
@@ -157,13 +159,35 @@ border-radius: 20px;
     align-items: center;
       h5{
         font-size: 16px;
-        font-weight: 100;
+        font-weight: 400;
       }
       h4 {
         font-size: 18px;
-        font-weight: 900;
+        font-weight: 800;
       }
     }
+}
+h1.buka{
+  transition:1s;
+  margin-top:0;
+  margin-bottom:20px;
+}
+h1.tutup{
+  transition:1s;
+  margin-top:30%;
+  margin-bottom:0px;
+}
+.hasil.buka{
+  height:100%;
+  transition:1s;
+  opacity:10;
+  overflow:hidden;
+}
+.hasil.tutup{
+  height:0%;
+  transition:0.1s;
+  opacity:0;
+  overflow:hidden;
 }
 
 `

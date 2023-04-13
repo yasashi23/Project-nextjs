@@ -1,15 +1,13 @@
 import React from 'react'
 import Header from '../../components/Header/Header'
 import styled from 'styled-components'
-import JamS from '../../components/Selisih-jam/JamS'
+import TglS from '../../components/Selisih-tgl/tglS'
 
-
-
-export default function Home() {
+export default function SlshTgl() {
   return (
     <Mycont>
-    <Header krmSls="on"/>
-    <JamS/>
+    <Header krmSlshTgl="on"/>
+    <TglS/>
     </Mycont>
   )
 }
@@ -17,8 +15,9 @@ export default function Home() {
 const Mycont = styled.div`
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
+width:100%;
 height:100vh;
 overflow:hidden;
 `
