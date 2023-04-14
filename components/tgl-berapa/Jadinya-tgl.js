@@ -123,4 +123,39 @@ const Mycont = styled.div`
       transition:1s;
     }
 
+@media only screen and (min-width:932px) and (max-width:1280px) {
+width: 440px;
+h1.tutup {
+  margin-top: 35%;
+}
+.cont {
+  h3 {
+    font-size: 28px;
+  }
+  h5 {
+    span {
+      font-size: 22px;
+    }
+  }
+}
+}
+@media only screen and (max-width:931px) and (min-width:640px) {
+width: 440px;
+h1.tutup {
+  margin-top: 35%;
+}
+.cont {
+  h3 {
+    font-size: 28px;
+  }
+  h5 {
+    span {
+      font-size: 22px;
+    }
+  }
+}
+}
+
+
+
 `

@@ -396,5 +396,189 @@ justify-content: center;
         }
     }
 }
+
+@media only screen and (min-width:932px) and (max-width:1280px) {
+max-width: 932px;
+gap: 20px;
+.form {
+    width: 440px;
+    h1 {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .cont-inp {
+        gap:18px;
+        h2 {
+        width: 95px;
+        font-size: 17px;
+        }
+        label {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .inputan {
+            .inp-time{
+                gap:8px;
+                .input-tm {
+                    input{
+
+                    width: 46px;
+                    height: 27px;
+                    font-size: 16px;
+                    }
+                }
+            }
+            .inp.date {
+                input {
+                    width: 135px;
+                    height: 22px;
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .btn-skg button {
+            margin-top: 21px;
+            font-size: 12px;
+            padding: 6px 14px 6px 14px;  
+        }
+    }
+    .line {
+        width: 90%;
+    }
+    .choose {
+        gap: 15px;
+        .inp-input {
+            .inp-cont {
+                gap: 8px; 
+                input {
+                    width: 46px;
+                    height: 27px;
+                    font-size: 16px;
+                }
+                label {
+                    font-size: 13px;
+                    margin-top: 5px;
+                    margin-bottom: 0px;
+                }
+            }
+            .inp-date {
+                margin: 15px 0px 5px;
+            }
+        }
+        select {
+            height: 26px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+    }
+
+    .form {
+        .btn {
+            button {
+                font-size: 12px;
+                padding: 8px 18px 8px 18px;
+            }
+        }
+    }
+
+}
+}
+
+@media only screen and (max-width:931px) and (min-width:640px) {
+gap: 30px;
+max-width: 640px;
+flex-direction: column-reverse;    
+align-items:center;
+gap: 20px;
+.form {
+    width: 440px;
+    h1 {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .cont-inp {
+        gap:18px;
+        h2 {
+        width: 95px;
+        font-size: 17px;
+        }
+        label {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .inputan {
+            .inp-time{
+                gap:8px;
+                .input-tm {
+                    input{
+
+                    width: 46px;
+                    height: 27px;
+                    font-size: 16px;
+                    }
+                }
+            }
+            .inp.date {
+                input {
+                    width: 135px;
+                    height: 22px;
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .btn-skg button {
+            margin-top: 21px;
+            font-size: 12px;
+            padding: 6px 14px 6px 14px;  
+        }
+    }
+    .line {
+        width: 90%;
+    }
+    .choose {
+        gap: 15px;
+        .inp-input {
+            .inp-cont {
+                gap: 8px; 
+                input {
+                    width: 46px;
+                    height: 27px;
+                    font-size: 16px;
+                }
+                label {
+                    font-size: 13px;
+                    margin-top: 5px;
+                    margin-bottom: 0px;
+                }
+            }
+            .inp-date {
+                margin: 15px 0px 5px;
+            }
+        }
+        select {
+            height: 26px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+    }
+
+    .form {
+        .btn {
+            button {
+                font-size: 12px;
+                padding: 8px 18px 8px 18px;
+            }
+        }
+    }
+
+}
+
+}
+
+
 `
 

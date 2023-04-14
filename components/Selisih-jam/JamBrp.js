@@ -138,7 +138,24 @@ h1.buka{
   }
   }
 }
-
+@media only screen and (max-width:931px) and (min-width:640px) {
+  padding: 40px 30px 50px 30px;
+  width: 450px;
+  height:280px;
+  h1{
+    font-size:24px;
+    margin-top:20%;
+  }
+  .detail .per {
+    p {
+    width: 135px;
+    font-size: 14px;
+    }
+  h4 {
+    font-size:16px;
+  }
+  }
+}
 
 
 

@@ -337,6 +337,55 @@ align-items:center;
         }
     }
 }
+@media only screen and (max-width:931px) and (min-width:640px) {
+
+
+
+
+gap: 30px;
+max-width: 640px;
+flex-direction: column-reverse;    
+align-items:center;
+.jam-brp {
+    width: 440px;
+    padding: 40px 20px 50px 20px;
+    h1{
+    margin-bottom: 20px;
+    font-size: 24px;
+    }
+    select {
+    margin-bottom: 22px;
+    font-size: 12px        
+    }
+    .btn button {
+    font-size:14px;
+    }
+    }
+}
+.Sls{
+    h2{
+        width: 107px;
+        margin-top: 18px;
+    }
+    .inp {
+        label {
+         margin-bottom: 5px;
+         font-size: 13px;   
+        input{
+            width: 50px;
+            height: 29px;
+            font-size: 15px
+        }
+    }
+    .btn-skg{
+        button {
+            font-size: 12px;
+            padding: 6px 12px 6px 12px; 
+        }
+    }
+
+
+
 }
 
 

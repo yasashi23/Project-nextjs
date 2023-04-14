@@ -371,4 +371,59 @@ button:last-child {
 }    
 }
 
+@media only screen and (min-width:932px) and (max-width:1280px) {
+max-width: 932px;   
+gap:20px;
+h1 {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+.form{
+    width: 410px;
+    .cont-inp {
+        h2{
+            margin-top: 36px;
+            width: 92px;
+            font-size: 17px;
+        }
+        .inputan{
+            label {
+            margin-bottom: 4px;
+            font-size: 14px;
+            }
+            .inp.date input {
+                width: 135px;
+                height: 22px;
+                font-size: 15px;
+            }
+
+            .inp-time{
+                gap: 9px;
+                margin-top: 10px;
+            .input-tm {
+                input {
+                font-size:16px;
+                width: 46px;
+                height: 27px;
+                }
+                font-size: 15px;
+            }
+            }
+        }
+        button {
+            margin-top: 36px;
+            font-size: 12px;
+            padding: 6px 14px 6px 14px;
+        }
+    }
+    .btn button {
+        font-size:12px;
+    }
+}
+
+
+}
+
+
+
 `

@@ -163,6 +163,7 @@ position:relative;
       h4 {
         font-size: 18px;
         font-weight: 800;
+        text-align:center;
       }
     }
 }
@@ -188,5 +189,32 @@ h1.tutup{
   opacity:0;
   overflow:hidden;
 }
+@media only screen and (min-width:932px) and (max-width:1280px) {
+padding: 23px 5px 23px 5px;
+width: 470px;
+h1.tutup {
+  margin-top: 45%;
+  }
+
+h1.buka {
+  margin-bottom: 20px;
+}
+.hasil {
+  .datanya {
+    h5 {
+      font-size: 15px;
+    }
+    h4 {
+      font-size: 14px;
+    }
+  }
+}
+.hasil.buka {
+  gap: 20px;
+}
+
+}
+
+
 
 `
