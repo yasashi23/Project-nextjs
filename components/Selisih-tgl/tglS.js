@@ -286,7 +286,7 @@ h1{
     gap: 50px;
 .form{
     width: 500px;
-    height: 450px;
+    height: 380px;
     box-sizing: border-box;
     padding: 40px 20px 50px 20px;
     background: #FFFFFF;
@@ -380,7 +380,7 @@ h1 {
     font-size: 25px;
 }
 .form{
-    width: 410px;
+    width: 450px;
     .cont-inp {
         h2{
             margin-top: 36px;
@@ -422,7 +422,7 @@ h1 {
     }
 }
 }
-@media only screen and (max-width:931px) and (min-width:640px) {
+@media only screen and (min-width:640px) and (max-width:931px) {
 gap: 12px;
 max-width: 640px;
 flex-direction: column-reverse;    
@@ -433,7 +433,7 @@ h1 {
     margin-bottom: 10px;
     font-size: 22px;
 }
-}
+
 .form{
     width: 410px;
     height:350px;

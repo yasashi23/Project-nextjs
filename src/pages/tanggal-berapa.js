@@ -33,7 +33,8 @@ p.power{
 }
 @media only screen and (max-width:931px) and (min-width:640px) {
   p.power{
-  bottom:18vh;
+  bottom:50vh;
 }
+height:87vh;
 }
 `

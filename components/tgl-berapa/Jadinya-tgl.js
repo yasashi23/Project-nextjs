@@ -155,7 +155,31 @@ h1.tutup {
   }
 }
 }
+@media only screen and (max-width:931px) and (min-width:640px) {
+width: 440px;
+height: 211px;
+padding: 31px 10px 31px 10px;
+h1.buka{
+font-size: 20px;
+margin-bottom: 13px;
+}
+h1.tutup {
+  margin-top: 10%;
+}
+.cont {
+  h3 {
+    font-size: 28px;
+  }
+  h5 {
+    span {
+      font-size: 22px;
+    }
+  }
+}
 
+
+
+}
 
 
 `

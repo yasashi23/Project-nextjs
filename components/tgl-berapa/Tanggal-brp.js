@@ -494,6 +494,7 @@ align-items:center;
 gap: 20px;
 .form {
     width: 440px;
+    height: 390px;
     h1 {
         font-size: 25px;
         margin-bottom: 20px;
@@ -578,7 +579,5 @@ gap: 20px;
 }
 
 }
-
-
 `
 

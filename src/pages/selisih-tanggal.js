@@ -7,7 +7,7 @@ import Menubtm from '../../components/menu-res/Menubtm'
 export default function SlshTgl() {
   return (
     <Mycont>
-    <Header krmSlshTgl="on"/>
+    <Header krmSlshTgl="on" headCal="atas on"/>
     <TglS/>
     <p className='power'>Powered By <a href='http://www.ybriliant.com' target="_blank">www.ybriliant.com</a></p>
     <Menubtm krmSlshTgl="on"/>
@@ -37,5 +37,10 @@ p.power{
   bottom:14vh;
     left:inherit;
 }
+.atas.on{
+  top:-50px;
 }
+
+}
+
 `

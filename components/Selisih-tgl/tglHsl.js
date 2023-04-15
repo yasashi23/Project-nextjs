@@ -123,6 +123,9 @@ export default function TglHsl({data}) {
     
   return (
     <Mycontain>
+
+
+
         <h1 className={buka == 0 ? "buka" : "tutup"}>Hasil Selisih Dari Tanggal</h1>
       <div className={buka == 0 ? "hasil buka" : "hasil tutup"}>
         {loop.map((el,ind)=>(
@@ -132,22 +135,24 @@ export default function TglHsl({data}) {
           </div>
         ))}
       </div>
+
     </Mycontain>
   )
 }
 
 const Mycontain = styled.div`
+box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+padding: 23px 10px 23px 10px;
+box-sizing: border-box;
+position:relative;
+border-radius: 20px;
+background: #FFFFFF;
+width: 670px;
+height: 510px;
 h1{
   text-align:center;
 }
-width: 670px;
-height: 510px;
-box-sizing: border-box;
-padding: 23px 10px 23px 10px;
-background: #FFFFFF;
-box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
-border-radius: 20px;
-position:relative;
+
 .hasil {
     display: flex;
     flex-direction: column;
@@ -190,10 +195,13 @@ h1.tutup{
   overflow:hidden;
 }
 @media only screen and (min-width:932px) and (max-width:1280px) {
+
 padding: 23px 5px 23px 5px;
+
 width: 470px;
+height:300px;
 h1.tutup {
-  margin-top: 45%;
+  margin-top: 25%;
   }
 
 h1.buka {
@@ -215,7 +223,36 @@ h1.buka {
 
 }
 @media only screen and (max-width:931px) and (min-width:640px) {
-    padding: 15px 5px 12px 5px;
+padding: 23px 10px 5px 10px;
+    width: 550px;
+    height: 340px;
+h1.tutup {
+  margin-top: 25%;
+  height: 27px;  
+  }
+
+h1.buka {
+    height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+}
+.hasil {
+  .datanya {
+    h5 {
+      font-size: 15px;
+    }
+    h4 {
+      font-size: 14px;
+    }
+  }
+}
+.hasil.buka {
+    gap: 9px;
+}
+
+}
+@media only screen and (max-width:931px) and (min-width:640px) {
+  padding: 23px 10px 5px 10px;
     width: 550px;
     height: 340px;
 h1.tutup {
