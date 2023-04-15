@@ -214,7 +214,35 @@ h1.buka {
 }
 
 }
+@media only screen and (max-width:931px) and (min-width:640px) {
+    padding: 15px 5px 12px 5px;
+    width: 550px;
+    height: 340px;
+h1.tutup {
+  margin-top: 25%;
+  height: 27px;  
+  }
 
+h1.buka {
+    height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+}
+.hasil {
+  .datanya {
+    h5 {
+      font-size: 15px;
+    }
+    h4 {
+      font-size: 14px;
+    }
+  }
+}
+.hasil.buka {
+    gap: 9px;
+}
+
+}
 
 
 `

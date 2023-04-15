@@ -76,6 +76,7 @@ width:100%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   position:fixed;
   top:0;
+  z-index:8;
 nav.nav-1 {
   display:flex;
   padding: 6vh 5px 5vh 5px;

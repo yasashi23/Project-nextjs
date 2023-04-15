@@ -3,6 +3,7 @@ import TglHsl from "./tglHsl"
 import { useState } from "react"
 
 
+
 export default function TglS() {
     const [mulai,setMulai] = useState('')
     const [sampai,setSampai]= useState('')
@@ -420,9 +421,65 @@ h1 {
         font-size:12px;
     }
 }
-
-
 }
+@media only screen and (max-width:931px) and (min-width:640px) {
+gap: 12px;
+max-width: 640px;
+flex-direction: column-reverse;    
+align-items:center;
+top:-10px;
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+}
+.form{
+    width: 410px;
+    height:350px;
+    padding: 20px 20px 16px 20px;
+    .cont-inp {
+        h2{
+            margin-top: 36px;
+            width: 92px;
+            font-size: 17px;
+        }
+        .inputan{
+            label {
+            margin-bottom: 4px;
+            font-size: 14px;
+            }
+            .inp.date input {
+                width: 135px;
+                height: 22px;
+                font-size: 15px;
+            }
+
+            .inp-time{
+                gap: 9px;
+                margin-top: 10px;
+            .input-tm {
+                input {
+                font-size:16px;
+                width: 46px;
+                height: 27px;
+                }
+                font-size: 15px;
+            }
+            }
+        }
+        button {
+            margin-top: 36px;
+            font-size: 12px;
+            padding: 6px 14px 6px 14px;
+        }
+    }
+    .btn button {
+        font-size:12px;
+    }
+}
+}
+
 
 
 

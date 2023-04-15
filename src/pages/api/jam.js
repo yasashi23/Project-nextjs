@@ -1,20 +1,19 @@
-import bodyParser from 'body-parser'
+import path from 'path';
+import  {promises as fs}  from 'fs';
 
-export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: '1mb',
-    },
-  },
-}
+export default async function handler(req, res) {
+  if(req.method === 'POST') {
+    const jsonDirectory = path.join(process.cwd(), 'dataJson');
+  const fileContents = await JSON.parse(fs.readFile(jsonDirectory + '/data.json', 'utf8'))
 
-export default function handler(req, res) {
-  if (req.method === 'POST') {
-    // Handle POST request here
-    const { jam,menit,detik,jamS,menitS,detikS } = req.body
-    console.log(`jam: ${jam}`)
-    res.status(200).json({ message: 'Success' })
-  } else {
-    res.status(405).json({ message: 'Method not allowed' })
+    res.send('ini post')
   }
+  else{
+  const jsonDirectory = path.join(process.cwd(), 'dataJson');
+  
+  const fileContents = await fs.readFile(jsonDirectory + '/data.json', 'utf8');
+  const get = JSON.parse(fileContents)
+  
+  res.status(200).json(get.aturan);
+}
 }

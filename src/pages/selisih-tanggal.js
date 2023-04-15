@@ -21,7 +21,7 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 width:100%;
-height:100vh;
+height:93vh;
 overflow:hidden;
 p.power{
   a{
@@ -34,7 +34,8 @@ p.power{
 }
 @media only screen and (max-width:931px) and (min-width:640px) {
   p.power{
-  bottom:18vh;
+  bottom:14vh;
+    left:inherit;
 }
 }
 `
