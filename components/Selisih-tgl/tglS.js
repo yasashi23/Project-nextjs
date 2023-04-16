@@ -286,7 +286,7 @@ h1{
     gap: 50px;
 .form{
     width: 500px;
-    height: 380px;
+    height: 430px;
     box-sizing: border-box;
     padding: 40px 20px 50px 20px;
     background: #FFFFFF;
