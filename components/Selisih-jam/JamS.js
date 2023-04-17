@@ -166,7 +166,7 @@ import { useState } from "react"
         
             <h1>Selisih jam</h1>
                 <div className="Sls mulai">
-                    <h2>Mulai dari </h2>
+                    <h2>Mulai</h2>
                     <div className="inp">
                     <label htmlFor="Jam">Jam</label>
                     <input type="number" name="Jam" id="Jam" value={cekJam(setJam)} min="0" max="24" required onChange={handleJ} />
@@ -183,7 +183,7 @@ import { useState } from "react"
                 <button onClick={cekValMulai}>Sekarang</button>
                 </div>
                 </div>
-            {/*  SAMPAI  */}
+                <hr />
                 <div className="Sls sampai">
                     <h2>Sampai </h2>
                     <div className="inp">
@@ -394,13 +394,11 @@ flex-direction: column-reverse;
     width: 360px;
     padding: 20px 20px 20px 20px;
     .Sls{
-        gap: 10px;
+        gap: 8px;
         h2{
-            margin-top: 0px;
-            width: 30px;
-            writing-mode: vertical-lr;
-            transform: rotate(180deg);
-            font-size: 18px;
+            margin-top: 5px;
+            width: 70px;
+            font-size: 16px;
         }
         .inp{
             label{  
@@ -408,8 +406,8 @@ flex-direction: column-reverse;
                 font-size: 13px;
             }
             input{
-                width: 46px;
-                height: 32px;
+                width: 45px;
+                height: 26px;
                 font-size: 16px;
             }
         }
@@ -424,17 +422,18 @@ flex-direction: column-reverse;
 
     }
     .Sls.sampai{
-        margin: 20px 0px;
+        margin: 0px 0px 20px;
     }
+    hr {
+        margin: 20px 0px;
+    
 }
 h1{
     margin-bottom: 6px;
     font-size: 22px;
 }
-
-
 }
-
+}
 
 `
 

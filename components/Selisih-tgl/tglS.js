@@ -214,7 +214,7 @@ export default function TglS() {
         <div className="form">
         <h1>Selisih Tanggal</h1>
         <div className="cont-inp">
-            <h2>{sls[0]}</h2>
+            <h2>Mulai</h2>
             <div className="inputan">
                 <div className="inp date">
                     <label htmlFor={sls[0]}></label>
@@ -480,16 +480,17 @@ h1 {
 }
 }
 @media only screen and (max-width:639px) and (min-width:400px){
-top: 0px;
+${'' /* top: 70px; */}
 max-width: 360px;
 width:100%;
-height:100vh;
-gap: 10px;
+gap: 20px;
+padding-top:110px;
+padding-bottom:115px;
 flex-direction: column-reverse;
 .form{
     width: 360px;
-    height: 330px;
-    padding: 13px 20px 11px 20px;
+    height: 360px;
+    padding: 13px 20px 24px 20px;
     .cont-inp{
         gap: 9px;
         h2{
@@ -502,7 +503,7 @@ flex-direction: column-reverse;
         .inputan{
             label{
                 margin-bottom: 5px;
-                font-size: 16px;
+                font-size: 12px;
             }
             .inp.date {
                 input{

@@ -46,7 +46,7 @@ p.power{
 height: 100vh;
 overflow: inherit;
 .atas.on{
-  top:-60px;
+  top:0px;
 }
 
 }

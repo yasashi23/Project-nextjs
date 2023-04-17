@@ -35,12 +35,12 @@ p.power{
 }
 @media only screen and (max-width:931px) and (min-width:640px) {
   p.power{
-  bottom:14vh;
+  bottom:115px;
 }
 }
 @media only screen and (max-width:639px) and (min-width:400px){
   p.power {
-    bottom: 18vh;
+    bottom:115px;
 }
 
 

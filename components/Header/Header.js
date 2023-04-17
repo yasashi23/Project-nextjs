@@ -120,7 +120,7 @@ nav.nav-1 {
   top:-50px;
 }
 nav.nav-1{
-      padding: 3vh 5px 2vh 5px;
+        padding: 20px 5px 20px 5px;
   .menu{
     display:none;
   }

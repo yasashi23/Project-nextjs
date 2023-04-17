@@ -134,14 +134,18 @@ const Mycontain = styled.div`
 width: 360px;
 height: 160px;  
 padding: 40px 10px 50px 10px;
+h3{
+  font-size:24px;
+}
 .cont.tutup h1{
     margin-top: 10%;
     margin-bottom: 0;
+    font-size:24px;
 }
 .cont.buka h1{
     margin-top: 0%;
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 16px;
 }
 }
 

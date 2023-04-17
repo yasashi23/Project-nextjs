@@ -188,6 +188,7 @@ h1.tutup {
     }
     h1.tutup{
       margin-top: 18%;
+      font-size:24px;
     }
     .cont {
       h3{

@@ -107,7 +107,7 @@ nav.nav-btm {
 @media only screen and (max-width:639px) and (min-width:400px) {
 nav.nav-btm {
   gap: 4px;
-  padding: 2vh 5px 4vh 5px;
+padding: 20px 5px 30px 5px;
 }
 nav.nav-btm .menu a {
   width: 80px;

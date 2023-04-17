@@ -143,7 +143,7 @@ import { useState } from 'react'
         <div className="jam-brp">        
             <h1>Jam berapa</h1>
                 <div className="Sls mulai">
-                    <h2>Mulai dari</h2>
+                    <h2>Mulai</h2>
                     <div className="inp">
                     <label htmlFor="JamBrp">Jam</label>
                     <input type="number" name="JamBrp" id="JamBrp" value={cekJam(setJam)} min="0" max="24" required onChange={handleJ} />
@@ -397,7 +397,7 @@ flex-direction: column-reverse;
         padding: 31px 20px 39px 20px;
         h1{
             margin-bottom: 12px;
-            font-size: 26px;
+            font-size: 24px;
         }
 
     }

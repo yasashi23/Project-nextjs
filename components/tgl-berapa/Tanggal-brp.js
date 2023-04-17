@@ -183,11 +183,11 @@ export default function TanggalBrp() {
     <div className="form">
         <h1>Tanggal Berapa?</h1>
         <div className="cont-inp">
-            <h2>{"Mulai Dari"}</h2>
+            <h2>Mulai</h2>
             <div className="inputan">
                 <div className="inp date">
                     <label htmlFor="MulaiTglbrp"></label>
-                    <input type="date" name="MulaiTglbrp" id="MulaiTglbrp" value={mulai} onChange={(e) => setMulai(e.target.value)}/>
+                    <input type="date" name="MulaiTglbrp" id="MulaiTglbrp" value={mulai} onChange={(e) => setMulai(e.target.value)} placeholder='dd/mm/yyyy'/>
                 </div>
                 <div className="inp-time">
                     {tm.map((e,i) => (
@@ -584,6 +584,8 @@ gap: 20px;
 top: 20px;
 max-width: 360px;
 gap: 10px;
+padding-top:110px;
+padding-bottom:115px;
 flex-direction: column-reverse;
 .form {
     width: 360px;
@@ -591,13 +593,17 @@ flex-direction: column-reverse;
     gap: 0px;   
     h1{
         margin-bottom: 10px;
-        font-size: 27px;
+        font-size: 24px;
     } 
     .cont-inp{
         gap: 10px;
         h2 {
-        margin-top: 18px;
-        width: 60px;
+        ${'' /* margin-top: 18px; */}
+        margin-bottom: 16px;
+                    width: 26px;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            font-size: 18px;
         }
         label{
         margin-bottom: 5px;
@@ -640,7 +646,7 @@ flex-direction: column-reverse;
             }
             gap: 6px;
         }
-        input{
+        .inp-input .inp-cont input{
             width: 46px;
             height: 26px;
             font-size: 16px;
