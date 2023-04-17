@@ -63,7 +63,7 @@ export default function Menubtm({krmSls,krmJambrp,krmSlshTgl,krmTglBrp}) {
 
 const Mycont = styled.div`
 display:none;
-@media only screen and (max-width:931px) and (min-width:640px) {
+@media only screen and (max-width:931px) and (min-width:200px) {
 display:flex;
 justify-content:center;
 width:100%;
@@ -100,6 +100,30 @@ nav.nav-btm {
     }
   }
 }    
+}
+
+
+
+@media only screen and (max-width:639px) and (min-width:400px) {
+nav.nav-btm {
+  gap: 4px;
+  padding: 2vh 5px 4vh 5px;
+}
+nav.nav-btm .menu a {
+  width: 80px;
+  padding: 7px 3px;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+}
+nav.nav-btm .menu{
+  gap: 4px;
+}
+
+
+
 }
 
 `

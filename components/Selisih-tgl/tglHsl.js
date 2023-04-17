@@ -251,35 +251,34 @@ h1.buka {
 }
 
 }
-@media only screen and (max-width:931px) and (min-width:640px) {
-  padding: 23px 10px 5px 10px;
-    width: 550px;
-    height: 340px;
-h1.tutup {
-  margin-top: 25%;
-  height: 27px;  
-  }
-
-h1.buka {
-    height: 0;
-    opacity: 0;
+@media only screen and (max-width:639px) and (min-width:400px){
+padding: 23px 10px 8px 10px;
+width: 360px;
+height: 420px;
+  h1.buka{
+    margin-top: 0;
+    font-size: 0px;
     margin-bottom: 0;
-}
-.hasil {
-  .datanya {
-    h5 {
-      font-size: 15px;
-    }
-    h4 {
-      font-size: 14px;
-    }
   }
-}
-.hasil.buka {
-    gap: 9px;
-}
+  h1.tutup{
+    margin-top:50%;
+  }
+   .hasil{
+      gap: 7px;
+      .datanya{
+        h5{
+          font-size: 16px;
+        }
+        h4{
+            font-size: 16px;
+            text-align: center;
+            width: 320px; 
+        }
+      }
+   }
+ 
+
 
 }
-
 
 `

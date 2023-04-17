@@ -386,6 +386,54 @@ h1{
 }
 
 }
+@media only screen and (max-width:639px) and (min-width:400px){
+gap: 10px;
+max-width: 360px;
+flex-direction: column-reverse;
+.hitung{
+    width: 360px;
+    padding: 20px 20px 20px 20px;
+    .Sls{
+        gap: 10px;
+        h2{
+            margin-top: 0px;
+            width: 30px;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            font-size: 18px;
+        }
+        .inp{
+            label{  
+                margin-bottom: 5px;
+                font-size: 13px;
+            }
+            input{
+                width: 46px;
+                height: 32px;
+                font-size: 16px;
+            }
+        }
+        .btn-skg{
+            margin-top: 18px;
+            button{
+                font-size: 13px;
+                padding: 8px 11px 8px 11px;
+            }
+
+        }
+
+    }
+    .Sls.sampai{
+        margin: 20px 0px;
+    }
+}
+h1{
+    margin-bottom: 6px;
+    font-size: 22px;
+}
+
+
+}
 
 
 `

@@ -114,7 +114,7 @@ nav.nav-1 {
 
 }
 
-@media only screen and (min-width:640px) and (max-width:932px) {
+@media only screen and (min-width:200px) and (max-width:932px) {
 
 .atas.on{
   top:-50px;

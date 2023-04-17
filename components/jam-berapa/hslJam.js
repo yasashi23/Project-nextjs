@@ -129,10 +129,20 @@ const Mycontain = styled.div`
       margin-bottom: 20px;
       font-size: 24px
     }
-
-
-
-
+}
+@media only screen and (max-width:639px) and (min-width:400px){
+width: 360px;
+height: 160px;  
+padding: 40px 10px 50px 10px;
+.cont.tutup h1{
+    margin-top: 10%;
+    margin-bottom: 0;
+}
+.cont.buka h1{
+    margin-top: 0%;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
 }
 
 `

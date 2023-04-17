@@ -243,7 +243,7 @@ export default function TglS() {
                 </div>            
                 <div className="inp-time">
                     {tmS.map((e,i) => (
-                        <div className="input-tm">
+                        <div className="input-tm" key={i}>
                             <label htmlFor={tmTgls[i]}>{tm[i]}</label>
                             <input type="number" name={tmTgls[i]} id={tmTgls[i]} value={cekJamSa[i]} onChange={changeS[i]} min={minM[i]} max={maxM[i]}/>
                         </div>
@@ -479,7 +479,72 @@ h1 {
     }
 }
 }
+@media only screen and (max-width:639px) and (min-width:400px){
+top: 0px;
+max-width: 360px;
+width:100%;
+height:100vh;
+gap: 10px;
+flex-direction: column-reverse;
+.form{
+    width: 360px;
+    height: 330px;
+    padding: 13px 20px 11px 20px;
+    .cont-inp{
+        gap: 9px;
+        h2{
+            margin-top: 0px;
+            width: 26px;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            font-size: 18px;
+        }
+        .inputan{
+            label{
+                margin-bottom: 5px;
+                font-size: 16px;
+            }
+            .inp.date {
+                input{
+                        width: 140px;
+                        height: 26px;
+                        font-size: 16px;
+                }
+            }
+            .inp-time{
+                    gap: 5px;
+                    margin-top: 3px;
+                    .input-tm input{
+                            width: 46px;
+                            height: 24px;
+                            font-size: 16px;
+                    }
+            }
+        }
+        button{
+                margin-top: 25px;
+                font-size: 13px;
+                padding: 8px 10px 8px 10px;
+        }
+    }
+    .cont-inp.bawah{
+        margin: 0px 0px 20px 0px;
+    }
+}
+.line{
+    margin: 16px 0px;
+}
 
+h1{
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+
+
+
+}
 
 
 

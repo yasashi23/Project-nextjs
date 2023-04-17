@@ -37,4 +37,15 @@ p.power{
 }
 height:87vh;
 }
+@media only screen and (max-width:639px) and (min-width:400px) {
+height: 90vh;
+}
+@media only screen and (max-width:639px) and (min-width:400px){
+  overflow: inherit;
+  p.power{
+    bottom: 116px;
+  }
+}
+
+
 `

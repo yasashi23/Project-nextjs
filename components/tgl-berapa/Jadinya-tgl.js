@@ -176,9 +176,31 @@ h1.tutup {
     }
   }
 }
+}
 
-
-
+@media only screen and (max-width:639px) and (min-width:400px) {
+    width: 360px;
+    height: 250px;
+    padding: 40px 10px 50px 10px;
+    h1.buka{
+      margin-bottom: 24px;
+      margin-top: 0%;
+    }
+    h1.tutup{
+      margin-top: 18%;
+    }
+    .cont {
+      h3{
+        font-size: 20px;
+      }
+      h5{
+        margin-top: 0px;
+        font-size: 24px;
+        span {
+          font-size: 18px;
+        }
+      }
+    }
 }
 
 

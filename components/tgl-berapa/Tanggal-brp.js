@@ -208,7 +208,7 @@ export default function TanggalBrp() {
             <div className="inp-input">
                 <div className="inp-cont inp-clock">
                             {tS.map((el,i) => (
-                <div className="inp">       
+                <div className="inp" key={i}>       
                     <input type="number" name={tmTglbrp[i]} id={tmTglbrp[i]} min={minM[i]} max={maxM[i]} value={cekJam(cekJamMS[i],el)} onChange={(e) => handle(e.target.value,el)} required/>
                     <label htmlFor={tmTglbrp[i]}>{tm[i]}</label>
                 </div>                    
@@ -216,7 +216,7 @@ export default function TanggalBrp() {
                 </div>
                 <div className="inp-cont inp-date">
                     {dayDate.map((el,i) => (
-                <div className="inp">       
+                <div className="inp" key={i}>       
                     <input type="number" name={tmTgls[i]} id={tmTgls[i]} min={minDate[i]} max={maxDate[i]} value={cekDate(cekDaten[i],el)} onChange={(e) => handle(e.target.value,el)} required/>
                     <label htmlFor={tmTgls[i]}>{el}</label>
                 </div>                    
@@ -579,5 +579,88 @@ gap: 20px;
 }
 
 }
+
+@media only screen and (max-width:639px) and (min-width:400px) {
+top: 20px;
+max-width: 360px;
+gap: 10px;
+flex-direction: column-reverse;
+.form {
+    width: 360px;
+    height: 392px;
+    gap: 0px;   
+    h1{
+        margin-bottom: 10px;
+        font-size: 27px;
+    } 
+    .cont-inp{
+        gap: 10px;
+        h2 {
+        margin-top: 18px;
+        width: 60px;
+        }
+        label{
+        margin-bottom: 5px;
+        font-size: 14px;
+        }
+        .inputan .inp.date input {
+        width: 140px;
+        height: 28px;
+        font-size: 17px;
+        }
+        .inputan .inp-time {
+        gap: 5px;
+        margin-top: 5px;
+            .input-tm input{
+                width: 46px;
+                height: 26px;
+                font-size: 16px;
+            }
+        }
+
+        .btn-skg button {
+            margin-top: 36px;
+            font-size: 14px;
+            padding: 8px 7px 8px 7px;
+        }
+
+    }
+
+    .line{
+        width: 90%;
+    }
+    .choose{
+        gap: 25px;
+        margin: 0px 0px 5px 0px;
+
+        .inp-input .inp-cont{
+            label{
+                margin-bottom: 0px;
+                font-size: 14px;
+            }
+            gap: 6px;
+        }
+        input{
+            width: 46px;
+            height: 26px;
+            font-size: 16px;
+        }
+        .inp-input .inp-date{
+            margin: 15px 0px 5px;
+        }
+        select{
+            height: 26px;
+            margin-bottom: 20px;
+        }
+
+    }
+
+}
+
+
+
+
+}
+
 `
 
