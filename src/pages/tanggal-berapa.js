@@ -32,23 +32,40 @@ p.power{
   opacity:.7;
 }
 @media only screen and (max-width:931px) and (min-width:640px) {
-  p.power{
-  bottom:12.5vh;
+height: 621px;
+padding-top: 104px;
+padding-bottom: 132px;
+p.power {
+    position: relative;
+    bottom: inherit;
+    left: inherit;
+    padding-top: 15px;
 }
-height:87vh;
 }
-@media only screen and (max-width:639px) and (min-width:400px){
+@media only screen and (max-width:640px) and (min-width:260px){
 height: 652px;
 padding-bottom: 117px;
-    padding-top: 84px;
+padding-top: 94px;
   overflow: inherit;
   p.power{
     bottom: 0px;
     font-size: 12px;
     position:relative;
-    margin-top:5px;
+    margin-top:15px;
   }
 }
+@media only screen and (max-width:400px){
+height: 620px;
+padding-top: 94px;
+padding-bottom: 132px;
+p.power {
+    position: relative;
+    bottom: inherit;
+    left: inherit;
+    padding-top: 15px;
+    font-size: 13px;
+}
 
+}
 
 `

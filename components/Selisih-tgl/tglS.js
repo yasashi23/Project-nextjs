@@ -479,7 +479,7 @@ h1 {
     }
 }
 }
-@media only screen and (max-width:639px) and (min-width:300px){
+@media only screen and (max-width:640px) and (min-width:260px){
 
 max-width: 360px;
 gap: 20px;
@@ -541,7 +541,32 @@ h1{
     font-size: 20px;
 }
 }
-@media only screen and (max-width:399px){
+@media only screen and (max-width:400px){
+max-width: 275px;
+gap: 20px;
+top: 0px;
+.form {
+    width: 275px;
+    height: 305px;
+    padding: 9px 6px 24px 6px;
+    .cont-inp {
+    gap: 9px;
+    .btn-skg button{
+        margin-top: 25px;
+        font-size: 11px;
+        padding: 6px 4px 6px 4px;
+    }
+    
+    }
+    .btn {
+        button {
+                font-size: 12px;
+                padding: 6px 12px 6px 12px;
+        }
+    }
+}
+
+
 
 }
 

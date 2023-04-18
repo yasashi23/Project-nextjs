@@ -130,7 +130,7 @@ const Mycontain = styled.div`
       font-size: 24px
     }
 }
-@media only screen and (max-width:639px) and (min-width:400px){
+@media only screen and (max-width:640px) and (min-width:260px){
 width: 360px;
 height: 160px;  
 padding: 40px 10px 50px 10px;
@@ -148,5 +148,13 @@ h3{
     font-size: 16px;
 }
 }
+@media only screen and (max-width:400px) {
+width: 275px;
+height: 160px;
+padding: 40px 10px 50px 10px;
+
+
+}
+
 
 `

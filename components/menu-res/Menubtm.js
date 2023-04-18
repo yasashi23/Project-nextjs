@@ -123,7 +123,20 @@ nav.nav-btm .menu{
 }
 }
 
+@media only screen and (max-width:400px){
+  nav.nav-btm {
+    gap: 5px;
+    padding: 20px 5px 30px 5px;
+    .menu {
+      gap:5px;
+      a{
+        width: 55px;
+        font-size:13px;
+      }
+    }
+}
 
+}
 
 
 `

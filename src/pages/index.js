@@ -34,19 +34,36 @@ p.power{
   opacity:.7;
 }
 @media only screen and (max-width:931px) and (min-width:640px) {
-  p.power{
-  bottom:115px;
+height: 630px;
+padding-top: 104px;
+padding-bottom: 132px;
+p.power {
+    position: relative;
+    bottom: inherit;
+    left: inherit;
+    padding-top: 15px;
 }
 }
-@media only screen and (max-width:639px) and (min-width:400px){
+@media only screen and (max-width:640px) and (min-width:260px){
   p.power {
-    bottom:115px;
+    position:relative;
+    bottom:11px;
     font-size: 12px;
 }
-
-
-
 }
+@media only screen and (max-width:400px){
+height: 570px;
+padding-top: 94px;
+padding-bottom: 132px;
+p.power {
+    position: relative;
+    bottom: inherit;
+    left: inherit;
+    padding-top: 15px;
+    font-size: 13px;
+}
+}
+
 
 
 `

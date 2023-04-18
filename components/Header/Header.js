@@ -126,7 +126,7 @@ nav.nav-1{
   }
 }
 }
-@media only screen and (max-width:200px){
+@media only screen and (max-width:400px){
 h2{
   font-size:16px;
 }

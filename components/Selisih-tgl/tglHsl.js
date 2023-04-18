@@ -98,7 +98,7 @@ export default function TglHsl({data}) {
       return `${newVal.toLocaleString('en-US')} bulan ${Math.abs(minggunya.toLocaleString('en-US'))} minggu ${Math.abs(harinya.toLocaleString('en-US'))} hari ${Math.abs(jamnya.toLocaleString('en-US'))} jam ${Math.abs(menitnya.toLocaleString('en-US'))} menit ${Math.abs(detiknya.toLocaleString('en-US'))} detik`
      }
       if(apa === 'minggu'){
-      const newVal = (bulannya*4) + ((tahunnya*12*4))
+      const newVal = minggunya + (bulannya*4) + ((tahunnya*12*4))
       return `${newVal.toLocaleString('en-US')} minggu ${Math.abs(harinya.toLocaleString('en-US'))} hari ${Math.abs(jamnya.toLocaleString('en-US'))} jam ${Math.abs(menitnya.toLocaleString('en-US'))} menit ${Math.abs(detiknya.toLocaleString('en-US'))} detik`
      }
       if(apa === 'hari'){
@@ -251,7 +251,7 @@ h1.buka {
 }
 
 }
-@media only screen and (max-width:639px) and (min-width:300px){
+@media only screen and (max-width:640px) and (min-width:260px){
 padding: 23px 10px 8px 10px;
 width: 360px;
 height: 420px;
@@ -276,7 +276,20 @@ height: 420px;
         }
       }
    }
- 
+}
+@media only screen and (max-width:400px) {
+padding: 23px 10px 8px 10px;
+width: 275px;
+height: 511px;
+h1.tutup {
+    margin-top: 200px;
+}
+.hasil {
+    gap: 13px;
+     .datanya h4 {
+        width: 250px;
+    }
+}
 
 
 }

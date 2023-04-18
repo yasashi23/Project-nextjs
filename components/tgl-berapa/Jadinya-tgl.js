@@ -178,7 +178,7 @@ h1.tutup {
 }
 }
 
-@media only screen and (max-width:639px) and (min-width:400px) {
+@media only screen and (max-width:639px) and (min-width:260px) {
     width: 360px;
     height: 250px;
     padding: 40px 10px 50px 10px;
@@ -203,6 +203,17 @@ h1.tutup {
       }
     }
 }
+@media only screen and (max-width:400px){
+width: 275px;
+height: 250px;
+ h1.tutup {
+    font-size: 24px;
+}
+h1.buka {
+    font-size: 16px;
+}
 
+
+}
 
 `

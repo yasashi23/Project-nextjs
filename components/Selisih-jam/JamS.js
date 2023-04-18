@@ -387,7 +387,7 @@ h1{
 }
 
 }
-@media only screen and (max-width:639px) and (min-width:400px){
+@media only screen and (max-width:640px) and (min-width:260px){
 gap: 10px;
 max-width: 360px;
 flex-direction: column-reverse;
@@ -437,6 +437,54 @@ h1{
 }
 }
 }
+@media only screen and (max-width:400px) {
+max-width: 275px;
+.hitung {
+    width: 275px;
+    padding: 20px 10px 20px 10px;
+    h1 {
+        margin-bottom: 6px;
+        font-size: 20px;
+    }
+    .Sls {
+        gap: 8px;
+        h2 {
+            margin-top: 0;
+            width: 70px;
+            font-size: 16px;
+            width: 26px;
+            font-size: 16px;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+        }
+        .inp input {
+            width: 45px;
+            height: 26px;
+            font-size: 16px;
+        }
+        .inp label {
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+        .btn-skg {
+            margin-top: 18px;
+            button {
+                font-size: 11px;
+                padding: 6px 4px 6px 4px;
+            }
+        }
+    }
+    .btn button {
+        font-size: 12px;
+        padding: 6px 12px 6px 12px;
+    }
+
+}
+
+
+}
+
+
 
 `
 

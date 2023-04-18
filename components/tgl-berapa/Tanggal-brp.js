@@ -488,6 +488,7 @@ gap: 20px;
 
 @media only screen and (max-width:931px) and (min-width:640px) {
 gap: 30px;
+top:0px;
 max-width: 640px;
 flex-direction: column-reverse;    
 align-items:center;
@@ -580,7 +581,7 @@ gap: 20px;
 
 }
 
-@media only screen and (max-width:639px) and (min-width:400px) {
+@media only screen and (max-width:640px) and (min-width:260px) {
 top: 0px;
 max-width: 360px;
 gap: 10px;
@@ -661,11 +662,45 @@ flex-direction: column-reverse;
     }
 
 }
-
-
+}
+@media only screen and (max-width:400px){
+max-width: 275px;
+.form {
+    width: 275px;
+    height: 360px;
+    gap: 0px;
+    h1{
+        font-size: 20px;
+    }
+    .cont-inp .btn-skg button {
+            margin-top: 25px;
+            font-size: 11px;
+            padding: 6px 4px 6px 4px;
+    }
+    .choose {
+        gap:9px;
+    }
+    .choose .inp-input .inp-cont input {
+    width: 40px;
+    height: 23px;
+    font-size: 14px;
+    }
+    .choose .inp-input .inp-cont label {
+    margin-bottom: 0px;
+    font-size: 11px;
+    }
+    .choose select {
+        font-size:12px;
+    }
+    .btn button {
+    font-size: 12px;
+    padding: 6px 12px 6px 12px;
+    }
+}
 
 
 }
+
 
 `
 

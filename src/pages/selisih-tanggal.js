@@ -33,16 +33,18 @@ p.power{
   opacity:.7;
 }
 @media only screen and (max-width:931px) and (min-width:640px) {
-  p.power{
-  bottom:12.5vh;
-    left:inherit;
-}
-.atas.on{
-  top:-50px;
+    height: 702px;
+    padding-top: 104px;
+    padding-bottom: 132px;
+p.power {
+    position: relative;
+    bottom: 0px;
+    left: inherit;
+    padding-top: 15px;
 }
 
 }
-@media only screen and (max-width:639px) and (min-width:400px) {
+@media only screen and (max-width:640px) and (min-width:260px) {
 position:relative;
 padding-bottom: 117px;
     padding-top: 84px;
@@ -59,9 +61,19 @@ overflow: inherit;
 .atas.on{
   top:0px;
 }
-
 }
 
-
+@media only screen and (max-width:400px){
+    height: 856px;
+    padding-top: 94px;
+    padding-bottom: 132px;
+p.power {
+    position: relative;
+    bottom: 0px;
+    left: inherit;
+    padding-top: 15px;
+    font-size: 13px;
+}
+}
 
 `

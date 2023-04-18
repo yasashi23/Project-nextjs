@@ -156,7 +156,7 @@ h1.buka{
   }
   }
 }
-@media only screen and (max-width:639px) and (min-width:400px){
+@media only screen and (max-width:640px) and (min-width:260px){
 width: 360px;
 height: 285px;
 padding: 40px 11px 30px 18px;
@@ -178,6 +178,35 @@ h1.buka{
       font-size: 16px;
     }
   }
+}
+}
+@media only screen and (max-width:400px){
+width: 275px;
+height: 285px;
+padding: 40px 11px 30px 18px;
+h1 {
+    font-size: 20px;
+    margin-top: 80px;
+}
+h1.buka {
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+.detail {
+    gap: 17px;
+    .per {
+        align-items: center;
+        flex-direction: column;
+        p {
+            width: 130px;
+            font-size: 14px;
+            text-align: center;
+        }
+        h4 {
+            font-size: 16px;
+        }
+    }
+
 }
 
 }
