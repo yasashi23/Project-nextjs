@@ -251,7 +251,7 @@ h1.buka {
 }
 
 }
-@media only screen and (max-width:639px) and (min-width:400px){
+@media only screen and (max-width:639px) and (min-width:300px){
 padding: 23px 10px 8px 10px;
 width: 360px;
 height: 420px;

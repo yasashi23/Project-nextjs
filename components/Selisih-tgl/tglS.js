@@ -479,7 +479,7 @@ h1 {
     }
 }
 }
-@media only screen and (max-width:639px) and (min-width:400px){
+@media only screen and (max-width:639px) and (min-width:300px){
 
 max-width: 360px;
 gap: 20px;
@@ -540,9 +540,8 @@ h1{
     margin-bottom: 8px;
     font-size: 20px;
 }
-
-
-
+}
+@media only screen and (max-width:399px){
 
 }
 

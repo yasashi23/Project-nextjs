@@ -125,10 +125,12 @@ nav.nav-1{
     display:none;
   }
 }
-
-
 }
-
+@media only screen and (max-width:200px){
+h2{
+  font-size:16px;
+}
+}
 
 `
 
