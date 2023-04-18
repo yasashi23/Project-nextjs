@@ -43,8 +43,19 @@ p.power{
 
 }
 @media only screen and (max-width:639px) and (min-width:400px) {
-height: 100vh;
+position:relative;
+padding-bottom: 117px;
+    padding-top: 84px;
+    height: 765px;
 overflow: inherit;
+
+  p.power{
+  bottom:0px;
+  left:inherit;
+  font-size: 12px;
+  margin-top:5px;
+  position:relative;
+}
 .atas.on{
   top:0px;
 }

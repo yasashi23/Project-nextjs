@@ -221,6 +221,7 @@ h1{
     text-align:center;
     margin-bottom:30px;
 }
+hr{display:none;}
 .hitung{
 display:flex;
 flex-direction: column;
@@ -425,7 +426,9 @@ flex-direction: column-reverse;
         margin: 0px 0px 20px;
     }
     hr {
+        display:block;
         margin: 20px 0px;
+        opacity:.5;
     
 }
 h1{

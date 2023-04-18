@@ -37,13 +37,16 @@ p.power{
 }
 height:87vh;
 }
-@media only screen and (max-width:639px) and (min-width:400px) {
-height: 90vh;
-}
 @media only screen and (max-width:639px) and (min-width:400px){
+height: 652px;
+padding-bottom: 117px;
+    padding-top: 84px;
   overflow: inherit;
   p.power{
-    bottom: 116px;
+    bottom: 0px;
+    font-size: 12px;
+    position:relative;
+    margin-top:5px;
   }
 }
 

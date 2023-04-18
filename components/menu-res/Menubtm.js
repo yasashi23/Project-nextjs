@@ -104,7 +104,7 @@ nav.nav-btm {
 
 
 
-@media only screen and (max-width:639px) and (min-width:400px) {
+@media only screen and (max-width:639px) and (min-width:260px) {
 nav.nav-btm {
   gap: 4px;
 padding: 20px 5px 30px 5px;
@@ -112,7 +112,7 @@ padding: 20px 5px 30px 5px;
 nav.nav-btm .menu a {
   width: 80px;
   padding: 7px 3px;
-  font-size: 17px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,9 +121,9 @@ nav.nav-btm .menu a {
 nav.nav-btm .menu{
   gap: 4px;
 }
-
-
-
 }
+
+
+
 
 `

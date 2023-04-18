@@ -41,6 +41,7 @@ p.power{
 @media only screen and (max-width:639px) and (min-width:400px){
   p.power {
     bottom:115px;
+    font-size: 12px;
 }
 
 

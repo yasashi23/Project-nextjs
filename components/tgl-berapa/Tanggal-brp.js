@@ -581,11 +581,10 @@ gap: 20px;
 }
 
 @media only screen and (max-width:639px) and (min-width:400px) {
-top: 20px;
+top: 0px;
 max-width: 360px;
 gap: 10px;
-padding-top:110px;
-padding-bottom:115px;
+
 flex-direction: column-reverse;
 .form {
     width: 360px;
@@ -593,7 +592,7 @@ flex-direction: column-reverse;
     gap: 0px;   
     h1{
         margin-bottom: 10px;
-        font-size: 24px;
+        font-size: 22px;
     } 
     .cont-inp{
         gap: 10px;
