@@ -63,7 +63,7 @@ export default function Menubtm({krmSls,krmJambrp,krmSlshTgl,krmTglBrp}) {
 
 const Mycont = styled.div`
 display:none;
-@media only screen and (max-width:931px) and (min-width:200px) {
+@media only screen and (max-width:932px) and (min-width:200px) {
 display:flex;
 justify-content:center;
 width:100%;

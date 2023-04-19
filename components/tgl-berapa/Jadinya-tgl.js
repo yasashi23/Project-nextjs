@@ -73,7 +73,7 @@ export default function JadinyaTgl({data}) {
 
 const Mycont = styled.div`
     width: 500px;
-    height: 450px;
+    height: 280px;
     gap: 0px;
     box-sizing: border-box;
     padding: 40px 10px 50px 10px;
@@ -102,12 +102,13 @@ const Mycont = styled.div`
       }
     }
     h1.buka{
-      margin-bottom:50px;
+      margin-bottom:25px;
       margin-top:0%;
       transition:1s;
+      font-size: 16px;
     }
     h1.tutup{
-      margin-top:35%;
+      margin-top:17%;
       margin-bottom:0px;
       transition:.8s;
     }
@@ -125,9 +126,6 @@ const Mycont = styled.div`
 
 @media only screen and (min-width:932px) and (max-width:1280px) {
 width: 440px;
-h1.tutup {
-  margin-top: 35%;
-}
 .cont {
   h3 {
     font-size: 28px;
@@ -139,32 +137,11 @@ h1.tutup {
   }
 }
 }
-@media only screen and (max-width:931px) and (min-width:640px) {
+@media only screen and (max-width:932px) and (min-width:640px) {
 width: 440px;
-h1.tutup {
-  margin-top: 35%;
-}
-.cont {
-  h3 {
-    font-size: 28px;
-  }
-  h5 {
-    span {
-      font-size: 22px;
-    }
-  }
-}
-}
-@media only screen and (max-width:931px) and (min-width:640px) {
-width: 440px;
-height: 211px;
-padding: 31px 10px 31px 10px;
-h1.buka{
-font-size: 20px;
-margin-bottom: 13px;
-}
-h1.tutup {
-  margin-top: 10%;
+height:210px;
+h1.tutup{
+  margin-top:10%;
 }
 .cont {
   h3 {

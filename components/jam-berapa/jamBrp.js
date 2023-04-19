@@ -201,6 +201,7 @@ const Mycontain = styled.div`
     justify-content: center;
     display: flex;
     gap: 50px;
+    align-items:center;
 .jam-brp{
     width: 500px;
     height: 350px;
@@ -266,7 +267,7 @@ const Mycontain = styled.div`
 }        
     
     h2{
-    width: 140px;
+    width: 72px;
     margin-top: 18px;
     }
     .inp{
@@ -313,10 +314,9 @@ align-items:center;
     font-size:14px;
     }
     }
-}
+
 .Sls{
     h2{
-        width: 90px;
         margin-top: 18px;
     }
     .inp {
@@ -337,7 +337,8 @@ align-items:center;
         }
     }
 }
-@media only screen and (max-width:931px) and (min-width:640px) {
+}
+@media only screen and (max-width:932px) and (min-width:640px) {
 
 
 
@@ -361,10 +362,9 @@ align-items:center;
     font-size:14px;
     }
     }
-}
+
 .Sls {
     h2{
-        width: 107px;
         margin-top: 18px;
     }
     .inp {
@@ -385,6 +385,7 @@ align-items:center;
     }
     }
 
+}
 }
 @media only screen and (max-width:640px) and (min-width:260px){
 max-width: 360px;

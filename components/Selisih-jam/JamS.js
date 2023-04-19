@@ -217,6 +217,7 @@ const Mycontain = styled.div`
     justify-content: center;
     gap: 50px;
     max-width: 1300px;
+    align-items:center;
 h1{
     text-align:center;
     margin-bottom:30px;
@@ -254,7 +255,7 @@ box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
 .Sls{
     h2{
         margin-top:18px;
-        width: 120px;
+        width: 86px;
     }
     display:flex;
     align-items:center;
@@ -310,7 +311,6 @@ h1{
     .Sls {
         gap:10px;
         h2{
-            width:90px;
             margin-top:18px;
         }
         .inp {
@@ -340,7 +340,7 @@ h1{
 
 }
 }
-@media only screen and (max-width:931px) and (min-width:640px) {
+@media only screen and (max-width:932px) and (min-width:640px) {
 gap: 30px;
 max-width: 640px;
 flex-direction: column-reverse;    
@@ -356,7 +356,6 @@ h1{
     .Sls {
         gap:10px;
         h2{
-            width:107px;
             margin-top:18px;
         }
         .inp {

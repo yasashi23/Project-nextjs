@@ -21,7 +21,7 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 width:100%;
-height:90vh;
+height:100vh;
 overflow:hidden;
 .JamBrp {
   display:none;
@@ -34,7 +34,7 @@ p.power{
   bottom:25px;
   opacity:.7;
 }
-@media only screen and (max-width:931px) and (min-width:640px) {
+@media only screen and (max-width:932px) and (min-width:640px) {
 height: 580px;
 padding-top: 104px;
 padding-bottom: 132px;

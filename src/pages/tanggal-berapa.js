@@ -31,8 +31,8 @@ p.power{
   bottom:15px;
   opacity:.7;
 }
-@media only screen and (max-width:931px) and (min-width:640px) {
-height: 621px;
+@media only screen and (max-width:932px) and (min-width:640px) {
+height: 690px;
 padding-top: 104px;
 padding-bottom: 132px;
 p.power {

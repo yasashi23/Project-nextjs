@@ -294,7 +294,8 @@ h1{
     border-radius: 20px;
     .cont-inp{
         display:flex;
-        justify-content:space-between;
+        justify-content:center;
+        gap:43px;
         button {
         margin-top:36px;
         font-size: 14px;
@@ -308,7 +309,7 @@ h1{
             }
         h2{
         margin-top:36px;
-        width: 114px;
+        width: 52px;
         }
         
         .inputan {
@@ -382,9 +383,9 @@ h1 {
 .form{
     width: 450px;
     .cont-inp {
+        gap:30px;
         h2{
             margin-top: 36px;
-            width: 92px;
             font-size: 17px;
         }
         .inputan{
@@ -422,7 +423,7 @@ h1 {
     }
 }
 }
-@media only screen and (min-width:640px) and (max-width:931px) {
+@media only screen and (min-width:640px) and (max-width:932px) {
 gap: 12px;
 max-width: 640px;
 flex-direction: column-reverse;    
@@ -439,9 +440,9 @@ h1 {
     height:350px;
     padding: 20px 20px 16px 20px;
     .cont-inp {
+        gap:25px;
         h2{
             margin-top: 36px;
-            width: 92px;
             font-size: 17px;
         }
         .inputan{

@@ -73,16 +73,16 @@ export default function JamBrp({data}) {
 }
 const Mycontain = styled.div`
 border-radius: 20px;
-padding: 40px 50px 50px 48px;
+padding: 40px 20px 50px 20px;
 background: #FFFFFF;
 box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
 width: 500px;
-height:350px;
+height:270px;
 box-sizing: border-box;
   h1{
     text-align: center;
     margin-bottom: 0px;
-    margin-top:25%;
+    margin-top:23%;
     transition:1s;
   }
   .detail {
@@ -108,6 +108,7 @@ h1.buka{
   margin-top:0%;
   margin-bottom:30px;
   transition:1s;
+  font-size:16px;
 }
 .detail.tutup{
     overflow:hidden;
@@ -138,7 +139,7 @@ h1.buka{
   }
   }
 }
-@media only screen and (max-width:931px) and (min-width:640px) {
+@media only screen and (max-width:932px) and (min-width:640px) {
   padding: 40px 30px 50px 30px;
   width: 450px;
   height:280px;

@@ -58,6 +58,7 @@ let {jam,menit,detik,jamS,menitS,detikS,option,buka} = wkt
 const Mycontain = styled.div`
     display: flex;
     width: 500px;
+    height:200px;
     box-sizing: border-box;
     border-radius: 20px;
     padding: 40px 10px 50px 10px;
@@ -74,7 +75,8 @@ const Mycontain = styled.div`
       h1{
       transition:.7s;
       margin-top:0%;
-      margin-bottom:50px;
+      margin-bottom: 25px;
+      font-size: 16px;
       }
       h3{
         height:100%;
@@ -86,7 +88,7 @@ const Mycontain = styled.div`
     }
     .cont.tutup{
       h1{
-      margin-top:50%;
+      margin-top:20%;
       transition:.7s;
       margin-bottom:0;
       }
@@ -117,7 +119,7 @@ const Mycontain = styled.div`
     
 
 }
-@media only screen and (max-width:931px) and (min-width:640px) {
+@media only screen and (max-width:932px) and (min-width:640px) {
     width: 440px;
     height: 200px;
     .cont.tutup h1 {

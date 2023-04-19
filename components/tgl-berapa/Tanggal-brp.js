@@ -251,6 +251,7 @@ display: flex;
 max-width: 1300px;
 gap: 50px;
 justify-content: center;
+align-items:center;
 .form{
     .line{
     width:480px;
@@ -281,8 +282,8 @@ justify-content: center;
         justify-content:center;
         gap:20px;
         h2{
-        margin-top: 18px;
-        width: 115px;
+            margin-top: 25px;
+            width: 55px;
         }
         label {
             margin-bottom: 5px;
@@ -410,7 +411,6 @@ gap: 20px;
     .cont-inp {
         gap:18px;
         h2 {
-        width: 95px;
         font-size: 17px;
         }
         label {
@@ -486,7 +486,7 @@ gap: 20px;
 }
 }
 
-@media only screen and (max-width:931px) and (min-width:640px) {
+@media only screen and (max-width:932px) and (min-width:640px) {
 gap: 30px;
 top:0px;
 max-width: 640px;
@@ -504,7 +504,6 @@ gap: 20px;
     .cont-inp {
         gap:18px;
         h2 {
-        width: 95px;
         font-size: 17px;
         }
         label {

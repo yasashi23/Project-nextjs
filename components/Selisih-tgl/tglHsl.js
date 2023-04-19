@@ -176,6 +176,7 @@ h1.buka{
   transition:1s;
   margin-top:0;
   margin-bottom:20px;
+  font-size:16px;
 }
 h1.tutup{
   transition:1s;
@@ -199,9 +200,9 @@ h1.tutup{
 padding: 23px 5px 23px 5px;
 
 width: 470px;
-height:300px;
+height:480px;
 h1.tutup {
-  margin-top: 25%;
+  margin-top: 40%;
   }
 
 h1.buka {
@@ -222,7 +223,7 @@ h1.buka {
 }
 
 }
-@media only screen and (max-width:931px) and (min-width:640px) {
+@media only screen and (max-width:932px) and (min-width:640px) {
 padding: 23px 10px 5px 10px;
     width: 550px;
     height: 340px;

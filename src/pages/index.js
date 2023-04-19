@@ -22,7 +22,7 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-height:90vh;
+height:100vh;
 overflow:hidden;
 
 p.power{
@@ -33,7 +33,7 @@ p.power{
   bottom:25px;
   opacity:.7;
 }
-@media only screen and (max-width:931px) and (min-width:640px) {
+@media only screen and (max-width:932px) and (min-width:640px) {
 height: 630px;
 padding-top: 104px;
 padding-bottom: 132px;
