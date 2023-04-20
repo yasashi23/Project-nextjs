@@ -29,7 +29,7 @@ p.power{
   }
   position:fixed;
   bottom:20px;
-  left:13vw;
+  left:inherit;
   opacity:.7;
 }
 @media only screen and (max-width:932px) and (min-width:640px) {

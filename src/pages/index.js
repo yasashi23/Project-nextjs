@@ -4,25 +4,17 @@ import Header from '../../components/Header/Header'
 import styled from 'styled-components'
 import JamS from '../../components/Selisih-jam/JamS'
 import Menubtm from '../../components/menu-res/Menubtm'
+import { Analytics } from '@vercel/analytics/react';
+
 
 
 
 
 export default function Home() {
-  const [load, setLoad] = useState(true)
-  const [masih, setMasih] = useState("masih")
-  
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLoad(false)
-    },2000)
-    
-    return () => {clearTimeout(timeout); setMasih("sudah")}
-  },[])
-
   return (
 
     <Mycont>
+    <Analytics/>
     <Header krmSls="on"/>
     <JamS className="test"/>
     <p className='power'>Powered By <a href='http://www.ybriliant.com' target="_blank">www.ybriliant.com</a></p>
