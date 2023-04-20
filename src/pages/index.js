@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 import Header from '../../components/Header/Header'
 import styled from 'styled-components'
 import JamS from '../../components/Selisih-jam/JamS'
@@ -6,8 +7,21 @@ import Menubtm from '../../components/menu-res/Menubtm'
 
 
 
+
 export default function Home() {
+  const [load, setLoad] = useState(true)
+  const [masih, setMasih] = useState("masih")
+  
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoad(false)
+    },2000)
+    
+    return () => {clearTimeout(timeout); setMasih("sudah")}
+  },[])
+
   return (
+
     <Mycont>
     <Header krmSls="on"/>
     <JamS className="test"/>
@@ -16,7 +30,6 @@ export default function Home() {
     </Mycont>
   )
 }
-
 const Mycont = styled.div`
 display:flex;
 flex-direction:column;
@@ -45,10 +58,15 @@ p.power {
 }
 }
 @media only screen and (max-width:640px) and (min-width:260px){
-  p.power {
-    position:relative;
-    bottom:11px;
-    font-size: 12px;
+  height: 570px;
+padding-top: 94px;
+padding-bottom: 132px;
+p.power {
+    position: relative;
+    bottom: inherit;
+    left: inherit;
+    padding-top: 15px;
+    font-size: 13px;
 }
 }
 @media only screen and (max-width:400px){

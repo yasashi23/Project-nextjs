@@ -82,7 +82,7 @@ box-sizing: border-box;
   h1{
     text-align: center;
     margin-bottom: 0px;
-    margin-top:23%;
+    margin-top:17%;
     transition:1s;
   }
   .detail {
@@ -127,7 +127,7 @@ h1.buka{
   width: 440px;
   h1{
     font-size:24px;
-    margin-top:30%;
+    margin-top:21%;
   }
   .detail .per {
     p {
